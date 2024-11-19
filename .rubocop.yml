@@ -1,0 +1,6 @@
+Style/RedundantSelf:
+  Enabled: false
+NumericLiterals:
+  Enabled: false
+Style/Documentation:
+  Enabled: false
