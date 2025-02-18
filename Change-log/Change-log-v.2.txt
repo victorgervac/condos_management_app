@@ -1,0 +1,66 @@
+Project Name: Ynex - Tailwind Admin and Dashboard Template.
+
+Version : V.2
+
+Updated-date:  02-May-2024
+ 
+Updates :- 
+
+ 1) Ui Issues Are Fixed.
+
+ 2) Some pages are updated.
+
+ 3) Some new pages are added.
+
+---------------------------------------------------------------------------------------------
+1) Ui Issues Are Fixed.
+---------------------------------------------------------------------------------------------
+
+   Please replace  css and scss  folders in assets (src/assets)
+        
+        root path:-
+            -->  css     (src/assets/css) 
+            -->  scss    (src/assets/scss)
+
+            Note:- run the Esbuild command (npm run ynex) after replacing .
+
+---------------------------------------------------------------------------------------------
+2) Some pages are updated.
+---------------------------------------------------------------------------------------------
+Please replace following html files (src/html/*.html)
+
+* Accordions
+* Alerts
+* Avatars
+* Badges
+* Cards
+* Progress
+* Navbar
+* Pagination
+* Form elements
+* form inputs
+* Color pickers
+* Ratings
+* Modals
+* Popovers
+* Timeline
+* Offcanvas
+* Typography
+
+---------------------------------------------------------------------------------------------
+3) Some New pages added.
+---------------------------------------------------------------------------------------------
+
+Please add following html files (src/html/*.html)
+
+* Block quotes
+* Input numbers
+* Counters & Markup
+* passwords
+* Form Switches
+* Advanced select
+* Custom scrollbar
+* Stepper
+   
+Thanking you,
+@spruko.

@@ -2,15 +2,23 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title CondosManagementApp
+    %title Condos Management App
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
+    %link{:crossorigin => "anonymous", :href => "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css",
+          :integrity => "sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==",
+          :referrerpolicy => "no-referrer", :rel => "stylesheet"}/
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
-    = stylesheet_link_tag "application", "inter-font", "data-turbo-track": "reload"
-    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
+    = stylesheet_link_tag "main", "inter-font", "data-turbo-track": "reload"
+    = stylesheet_link_tag "all-themes", "inter-font", "data-turbo-track": "reload"
+ 
+    = javascript_include_tag "application"
+    -# = javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module"
     = javascript_importmap_tags
-  %body
-    %main.container.mx-auto.mt-28.px-5.flex.text-red-500
-      = render "shared/navbar"
-      = yield
+  %body.page.bg-gray-50
+    %main
+    %p.notice= notice
+    %p.alert= alert
+   
+    = yield

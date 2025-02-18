@@ -78,3 +78,8 @@ group :test do
   gem "webdrivers"
 
 end
+
+
+gem "pry-rails"
+gem "pry"
+gem "devise", "~> 4.9"

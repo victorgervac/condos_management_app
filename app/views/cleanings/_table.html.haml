@@ -1,0 +1,63 @@
+.xl:col-span-6.col-span-12.bg-white.text-black.my-3
+  %div
+    .justify-between
+      .box-title Reservations Co
+      %button.ti-btn.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} View All
+    .box-body
+      %ul.list-none.mb-0.personal-upcoming-events
+        %li
+          .flex.items-center
+            .me-2
+              %span.avatar.avatar-rounded.bg-red-500
+                %i{class:"fa-solid fa-calendar-days text-black"}
+            .flex-grow
+              %span
+                Meeting with
+                %span.text-primary.font-semibold Umar Xai
+              %span.block{:class => " text-[0.75rem]"} 2 Hours
+            %div
+              %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"} 11-06-2023
+        %li
+          .flex.items-center
+            .me-2
+              %span.avatar.avatar-rounded
+                %img{:alt => "", :src => "../assets/images/faces/2.jpg"}/
+            .flex-grow
+              %span
+                %span.text-primary.font-semibold Shin Map
+                Birthday Party
+              %span.block{:class => " text-[0.75rem]"} 5 Hours
+            %div
+              %span.badge.text-success.whitespace-nowrap{:class => "bg-success/10"} 15-06-2023
+        %li
+          .flex.items-center
+            .me-2
+              %span.avatar.avatar-rounded.bg-light
+                %i.bi.bi-compass.text-pinkmain{:class => "text-[1rem]"}
+            .flex-grow
+              %span Holiday Trip To Italy
+              %span.block{:class => " text-[0.75rem]"} 1 Week
+            %div
+              %span.badge.text-danger.whitespace-nowrap{:class => "bg-danger/10"} 20-06-2023
+        %li
+          .flex.items-center
+            .me-2
+              %span.avatar.avatar-rounded.bg-light
+                %i.bi.bi-balloon-heart.text-success{:class => "text-[1rem]"}
+            .flex-grow
+              %span Wedding Anniversary
+              %span.block{:class => "  text-[0.75rem]"} 1 Day
+            %div
+              %span.badge.text-secondary.whitespace-nowrap{:class => "bg-secondary/10"} 24-07-2023
+        %li
+          .flex.items-center
+            .me-2
+              %span.avatar.avatar-rounded
+                %img{:alt => "", :src => "../assets/images/faces/7.jpg"}/
+            .flex-grow
+              %span
+                Meeting with
+                %span.text-primary.font-semibold Irav Ert
+              %span.block{:class => " dark:text-white/50 text-[0.75rem]"} 45 Minutes
+            %div
+              %span.badge.text-warning.whitespace-nowrap{:class => "bg-warning/10"} 15-06-2023

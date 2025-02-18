@@ -3,5 +3,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root 'dashboards#index'
+  devise_for :users
+  resources :cleanings
+  root 'cleanings#index'
 end
