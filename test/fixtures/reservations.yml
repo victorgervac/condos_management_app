@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hostaway_id: 1
+  property: one
+  guest_name: MyString
+  guest_email: MyString
+  check_in: 2025-02-19
+  check_out: 2025-02-19
+  total_price: 9.99
+  status: MyString
+
+two:
+  hostaway_id: 1
+  property: two
+  guest_name: MyString
+  guest_email: MyString
+  check_in: 2025-02-19
+  check_out: 2025-02-19
+  total_price: 9.99
+  status: MyString

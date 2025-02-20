@@ -1,12 +1,15 @@
 class InsertPlaceToDb
+  attr_reader :errors
+
   def initialize(json_data:)
     @json_data = json_data
     @errors = []
   end
 
   def self.run(json_data:)
-    new(json_data: json_data).insert_obj
-    { status: @errors.present? ? 'fail' : 'success', errors: (@errors.present? ? @errors : nil) }
+    service = new(json_data: json_data)
+    service.insert_obj
+    { status: service.errors.present? ? 'fail' : 'success', errors: service.errors.presence }
   end
 
   def insert_obj
@@ -17,19 +20,22 @@ class InsertPlaceToDb
 
   def build_obj
     @json_data['result'].each do |p|
-      new_p = Place.where(id: p['id']).first_or_initialize
-      new_p.attributes = { name: p['name'],
-                           internal_listing_name: p['internalListingName'],
-                           external_listing_name: p['externalListingName'],
-                           state: p['state'],
-                           city: p['city'],
-                           street: p['street'],
-                           address: p['address'],
-                           zipcode: p['zipcode'],
-                           price: p['price'],
-                           cleaning_fee: p['cleaningFee'] }
+      raise p.inspect
+      place = Listing.find_or_initialize_by(id: p['id'])
+      place.assign_attributes(
+        name: p['name'],
+        internal_listing_name: p['internalListingName'],
+        external_listing_name: p['externalListingName'],
+        state: p['state'],
+        city: p['city'],
+        street: p['street'],
+        address: p['address'],
+        zipcode: p['zipcode'],
+        price: p['price'],
+        cleaning_fee: p['cleaningFee']
+      )
 
-      @errors.push(new_p.errors.full_messages) unless new_p.save!
+      @errors << { id: p['id'], errors: place.errors.full_messages } unless place.save
     end
   end
 end

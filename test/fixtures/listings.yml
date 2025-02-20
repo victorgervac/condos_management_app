@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hostaway_id: 1
+  property: one
+  platform: MyString
+  status: MyString
+  price: 9.99
+  availability: false
+
+two:
+  hostaway_id: 1
+  property: two
+  platform: MyString
+  status: MyString
+  price: 9.99
+  availability: false
