@@ -20,7 +20,6 @@ class InsertPlaceToDb
 
   def build_obj
     @json_data['result'].each do |p|
-      raise p.inspect
       place = Listing.find_or_initialize_by(id: p['id'])
       place.assign_attributes(
         name: p['name'],
