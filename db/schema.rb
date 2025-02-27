@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_20_045844) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_27_060717) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,15 +25,56 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_20_045844) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer "hostaway_id"
-    t.bigint "property_id", null: false
-    t.string "platform"
-    t.string "status"
-    t.decimal "price"
     t.boolean "availability"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["property_id"], name: "index_listings_on_property_id"
+    t.string "name"
+    t.string "external_listing_name"
+    t.string "internal_listing_name"
+    t.text "description"
+    t.string "thumbnail_url"
+    t.text "house_rules"
+    t.text "key_pickup"
+    t.text "special_instruction"
+    t.integer "door_security_code"
+    t.string "country"
+    t.integer "country_code"
+    t.string "state"
+    t.string "city"
+    t.string "street"
+    t.string "address"
+    t.string "public_address"
+    t.string "zipcode"
+    t.decimal "price"
+    t.integer "star_rating"
+    t.decimal "weekly_discount"
+    t.decimal "monthly_discount"
+    t.decimal "property_rent_tax"
+    t.decimal "guest_per_person_per_night_tax"
+    t.decimal "guest_stay_tax"
+    t.decimal "guest_nightly_tax"
+    t.decimal "refundable_damage_deposit"
+    t.decimal "is_deposit_stay_collected"
+    t.integer "person_capacity"
+    t.integer "max_children_allowed"
+    t.integer "max_infants_allowed"
+    t.integer "max_pets_allowed"
+    t.decimal "lat"
+    t.decimal "lng"
+    t.integer "check_in_time_start"
+    t.integer "check_in_time_end"
+    t.integer "check_out_time"
+    t.integer "cancellation_policy"
+    t.integer "cleaning_fee"
+    t.integer "checkin_fee"
+    t.string "contact_name"
+    t.string "contact_sur_name"
+    t.string "contact_phone1"
+    t.string "contact_phone2"
+    t.string "contact_language"
+    t.string "contact_email"
+    t.string "contact_address"
+    t.string "language"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -102,7 +143,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_20_045844) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "listings", "properties"
   add_foreign_key "messages", "reservations"
   add_foreign_key "reservations", "properties"
 end

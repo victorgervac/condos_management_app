@@ -1,0 +1,51 @@
+class AddFieldsToListing < ActiveRecord::Migration[7.0]
+  def change
+    add_column :listings, :name, :string
+    add_column :listings, :external_listing_name, :string
+    add_column :listings, :internal_listing_name, :string
+    add_column :listings, :description, :text
+    add_column :listings, :thumbnail_url, :string
+    add_column :listings, :house_rules, :text
+    add_column :listings, :key_pickup, :text
+    add_column :listings, :special_instruction, :text
+    add_column :listings, :door_security_code, :integer
+    add_column :listings, :country, :string
+    add_column :listings, :country_code, :integer
+    add_column :listings, :state, :string
+    add_column :listings, :city, :string
+    add_column :listings, :street, :string
+    add_column :listings, :address, :string
+    add_column :listings, :public_address, :string
+    add_column :listings, :zipcode, :string
+    add_column :listings, :price, :decimal
+    add_column :listings, :star_rating, :integer
+    add_column :listings, :weekly_discount, :decimal
+    add_column :listings, :monthly_discount, :decimal
+    add_column :listings, :property_rent_tax, :decimal
+    add_column :listings, :guest_per_person_per_night_tax, :decimal
+    add_column :listings, :guest_stay_tax, :decimal
+    add_column :listings, :guest_nightly_tax, :decimal
+    add_column :listings, :refundable_damage_deposit, :decimal
+    add_column :listings, :is_deposit_stay_collected, :decimal
+    add_column :listings, :person_capacity, :integer
+    add_column :listings, :max_children_allowed, :integer
+    add_column :listings, :max_infants_allowed, :integer
+    add_column :listings, :max_pets_allowed, :integer
+    add_column :listings, :lat, :decimal
+    add_column :listings, :lng, :decimal
+    add_column :listings, :check_in_time_start, :integer
+    add_column :listings, :check_in_time_end, :integer
+    add_column :listings, :check_out_time, :integer
+    add_column :listings, :cancellation_policy, :integer
+    add_column :listings, :cleaning_fee, :integer
+    add_column :listings, :checkin_fee, :integer
+    add_column :listings, :contact_name, :string
+    add_column :listings, :contact_sur_name, :string
+    add_column :listings, :contact_phone1, :string
+    add_column :listings, :contact_phone2, :string
+    add_column :listings, :contact_language, :string
+    add_column :listings, :contact_email, :string
+    add_column :listings, :contact_address, :string
+    add_column :listings, :language, :string
+  end
+end

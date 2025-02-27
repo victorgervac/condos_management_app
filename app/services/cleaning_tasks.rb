@@ -4,7 +4,7 @@ class CleaningTasks
   url = 'https://api.hostaway.com/v1/tasks'
 
   headers = {
-    'Authorization': "Bearer": 'no-cache'
+    'Authorization': "Bearer #{breare_key}": 'no-cache'
   }
 
   response = requests.request('GET', url, headers = headers)
