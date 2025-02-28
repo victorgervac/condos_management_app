@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_27_060717) do
+ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -117,6 +117,19 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_27_060717) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "guest_first_name"
+    t.string "guest_last_name"
+    t.string "guest_zip_code"
+    t.string "guest_address"
+    t.string "guest_city"
+    t.string "guest_country"
+    t.string "guest_picture"
+    t.string "guest_recommendations"
+    t.string "guest_trips"
+    t.string "guest_work"
+    t.string "listing_name"
+    t.string "arrival_date"
+    t.string "departure_date"
     t.index ["property_id"], name: "index_reservations_on_property_id"
   end
 

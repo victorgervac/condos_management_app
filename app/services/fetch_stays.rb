@@ -17,21 +17,24 @@ class FetchStays
 
   def build_obj
     @json_data['result'].each do |p|
-      puts "whats p: #{p}"
+      puts "whats p: #{p.keys.inspect}"
       new_p = Reservation.where(id: p['id']).first_or_initialize
-      puts "res? p: #{new_p.attributes.inspect}"
-      puts "hello: #{p['id']}"
 
       new_p.attributes = {
-        listing_map_id: p['listingMapId'],
-        arrival_on: p['arrivalDate'],
-        departure_on: p['departureDate'],
-        nights: p['nights'],
-        total_price: p['totalPrice'],
-        tax_amount: p['taxAmount'],
-        rental_agreement_file_url: p['rentalAgreementFileUrl'],
-        hostaway_reservation_id: p['hostawayReservationId'],
-        airbnb_listing_cleaning_fee: p['airbnbListingCleaningFee']
+        # listing_map_id: p['listingMapId'],
+        # hostaway_reservation_id: p['hostawayReservationId'],
+        # nights: p['nights'],
+        # total_price: p['totalPrice'],
+        # tax_amount: p['taxAmount'],
+        # rental_agreement_file_url: p['rentalAgreementFileUrl'],
+        # airbnb_listing_cleaning_fee: p['airbnbListingCleaningFee']
+        listing_name: p['listing_name'],
+        arrival_date: p['arrivalDate'],
+        departure_date: p['departureDate'],
+        guest_name: p['guest_name'],
+        guest_first_name: p['guest_first_name'],
+        guest_last_name: p['guest_last_name']
+
       }
       @errors << new_p.errors.full_messages unless new_p.save!
     end
