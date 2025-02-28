@@ -34,7 +34,7 @@ class InsertPlaceToDb
         cleaning_fee: p['cleaningFee']
       }
 
-      @errors << { id: p['id'], errors: listing.errors.full_messages } unless listing.save
+      @errors << { id: p['id'], errors: listing.errors.full_messages } unless listing.save!
     end
   end
 end

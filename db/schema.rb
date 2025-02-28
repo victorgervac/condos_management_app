@@ -89,26 +89,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
     t.index ["reservation_id"], name: "index_messages_on_reservation_id"
   end
 
-  create_table "properties", force: :cascade do |t|
-    t.integer "hostaway_id"
-    t.string "name"
-    t.string "address"
-    t.string "city"
-    t.string "state"
-    t.string "country"
-    t.float "latitude"
-    t.float "longitude"
-    t.decimal "price_per_night"
-    t.integer "bedrooms"
-    t.integer "bathrooms"
-    t.text "amenities"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "hostaway_id"
-    t.bigint "property_id", null: false
     t.string "guest_name"
     t.string "guest_email"
     t.date "check_in"
@@ -130,7 +112,6 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
     t.string "listing_name"
     t.string "arrival_date"
     t.string "departure_date"
-    t.index ["property_id"], name: "index_reservations_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -157,5 +138,4 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
   end
 
   add_foreign_key "messages", "reservations"
-  add_foreign_key "reservations", "properties"
 end
