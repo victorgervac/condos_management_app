@@ -17,7 +17,7 @@ class FetchStays
 
   def build_obj
     @json_data['result'].each do |p|
-      puts "whats p: #{p.keys.inspect}"
+      puts "whats p: #{p.inspect}"
       new_p = Reservation.where(id: p['id']).first_or_initialize
 
       new_p.attributes = {

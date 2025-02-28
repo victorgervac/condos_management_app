@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   devise_for :users
   resources :cleanings
-  root 'cleanings#index'
+  root 'reservations#index'
+  resources :reservations
 end

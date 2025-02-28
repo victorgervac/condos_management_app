@@ -36,6 +36,7 @@ gem "haml-rails"
 gem 'roo' 
 gem "prawn"
 gem 'http'
+gem 'pagy'
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"

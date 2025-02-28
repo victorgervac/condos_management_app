@@ -1,3 +1,7 @@
 class CleaningsController < ApplicationController
-  def index; end
+  include Pagy::Backend
+  def index
+    @cleanings = Cleaning.all
+    @pagy, @records = pagy(@cleanings, items: @per_page)
+  end
 end
