@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   root 'dashboards#index'
   resources :reservations
   resources :listings
+  resources :users
+
 end

@@ -13,12 +13,15 @@
                 %span.avatar.avatar-rounded.bg-amber-600.py-2.px-3.rounded
                   %i{class:"fa-solid fa-hotel text-black"}
               .flex-grow.flex-col
-                %span
+                %span.flex.justify-between  
                   %span.text-primary.font-semibold=(res.guest_name || "Guest Name")
+                  %div
+                    %span Total
+                    %span= res.total_price
                 %div.flex
-                  %span.block{:class => " text-[0.75rem]"} Arrival Date:
+                  %span.block Arrival Date:
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=res.arrival_date
-                  %span.block{:class => " text-[0.75rem]"} Departure Date:
+                  %span.block Departure Date:
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=res.departure_date
         %div.flex.justify-between
           %form{action: reservations_path, method: :get}

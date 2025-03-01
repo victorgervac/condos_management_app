@@ -1,0 +1,729 @@
+.block.justify-between.page-header.md:flex
+  %div
+    %h3.font-semibold.text-lg Profile
+  %ol.flex.items-center.whitespace-nowrap.min-w-0
+    %li{:class => "text-[0.813rem] ps-[0.5rem]"}
+      %a.flex.items-center.text-primary.hover:text-primary.dark:text-primary.truncate{:href => "/"}
+        Home
+        %i.ti.ti-chevrons-right.flex-shrink-0.overflow-visible.rtl:rotate-180{:class => " px-[0.5rem]"}
+    %li.text-defaulttextcolor.font-semibold.hover:text-primary{"aria-current" => "page", :class => "text-[0.813rem] "} Profile
+.grid.grid-cols-12.gap-x-6
+  .xxl:col-span-4.xl:col-span-12.col-span-12.bg-white
+    .box.overflow-hidden
+      .box-body{:class => "!p-0"}
+        .sm:flex.items-start.p-6{class:"bg-gradient-to-r from-slate-500 to-slate-800"}
+          %div{class:"h-14 bg-linear-to-t from-sky-500 to-indigo-500"}
+            %span.avatar.avatar-xxl.avatar-rounded.online.me-4
+              %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+          .flex-grow.main-profile-info
+            .flex.items-center{:class => "!justify-between"}
+              %h6.font-semibold.mb-1.text-white{:class => "text-[1rem]"}= @user.name
+              =link_to edit_user_registration_path do
+                %i.ri-add-line.me-1.align-middle.inline-block>
+                Edit Password
+            %p.mb-1{:class => "!text-white opacity-[0.7]"} Chief Executive Officer (C.E.O)
+            %p.text-white.mb-6{:class => "text-[0.75rem] opacity-[0.5]"}
+              %span.me-4.inline-flex
+                %i.ri-building-line.me-1.align-middle>
+                Georgia
+              %span.inline-flex
+                %i.ri-map-pin-line.me-1.align-middle>
+                Washington D.C
+            .flex.mb-0
+              .me-6
+                %p.font-bold.text-white.text-shadow.mb-0{:class => "text-[1.25rem]"} 113
+                %p.mb-0.text-white{:class => "text-[.6875rem] opacity-[0.5]"} Projects
+              .me-6
+                %p.font-bold.text-white.text-shadow.mb-0{:class => "text-[1.25rem]"} 12.2k
+                %p.mb-0.text-white{:class => "text-[.6875rem] opacity-[0.5]"} Followers
+              .me-6
+                %p.font-bold.text-white.text-shadow.mb-0{:class => "text-[1.25rem]"} 128
+                %p.mb-0.text-white{:class => "text-[.6875rem] opacity-[0.5]"} Following
+        .p-6.border-b.border-dashed{:class => "dark:border-defaultborder/10 text-zinc-800"}
+          .mb-6
+            %p.mb-2.font-semibold Professional Bio :
+            %p.mb-0
+              I am
+              %b.text-defaulttextcolor Sonya Taylor,
+              here by conclude that,i am the founder and managing director of the prestigeous company name laugh at all and acts as the cheif executieve officer of the company.
+          .mb-0
+            %p.mb-2.font-semibold{:class => "text-[.9375rem]"} Links :
+            .mb-0
+              %p.mb-1
+                %a.text-primary{:href => "https://themeforest.net/user/spruko/portfolio", :target => "_blank"}
+                  %u https://www.spruko.com/
+              %p.mb-0
+                %a.text-primary{:href => "https://themeforest.net/user/spruko/portfolio", :target => "_blank"}
+                  %u https://themeforest.net/user/ spruko/portfolio
+        .p-6.border-b.border-dashed{:class => "dark:border-defaultborder/10"}
+          %p.mb-2.me-6.font-semibold{:class => "text-[.9375rem]"} Contact Information :
+          %div{:class => "text-zinc-800/50"}
+            %p.mb-2
+              %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-[#8c9097] dark:text-white/50"}
+                %i.ri-mail-line.align-middle{:class => "text-[.875rem] text-[#8c9097] dark:text-white/50"}
+              sonyataylor2531@gmail.com
+            %p.mb-2
+              %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-[#8c9097] dark:text-white/50"}
+                %i.ri-phone-line.align-middle{:class => "text-[.875rem] text-[#8c9097] dark:text-white/50"}
+              +(555) 555-1234
+            %p.mb-0
+              %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-[#8c9097] dark:text-white/50"}
+                %i.ri-map-pin-line.align-middle{:class => "text-[.875rem] text-[#8c9097] dark:text-white/50"}
+              MIG-1-11, Monroe Street, Georgetown, Washington D.C, USA,20071
+       
+  .xxl:col-span-8.xl:col-span-12.col-span-12
+    .grid.grid-cols-12.gap-x-6
+      .xl:col-span-12.col-span-12
+        .box
+          .box-body{:class => "!p-0"}
+            .border-b.border-dashed.md:flex.items-center.justify-between{:class => "!p-4 dark:border-defaultborder/10"}
+              %nav.sm:flex.md:space-x-6.rtl:space-x-reverse.pb-2{:class => "-mb-0.5", :role => "tablist"}
+                %a#activity-tab.w-full.sm:w-auto.flex.active.hs-tab-active:font-semibold.hs-tab-active:text-white.hs-tab-active:bg-primary.rounded-md.py-2.px-4.text-primary.text-sm{"aria-controls" => "activity-tab-pane", "data-hs-tab" => "#activity-tab-pane", :href => "javascript:void(0);"}
+                  %i.ri-gift-line.align-middle.inline-block.me-1>
+                  Activity
+                %a#posts-tab.w-full.sm:w-auto.flex.hs-tab-active:font-semibold.hs-tab-active:text-white.hs-tab-active:bg-primary.rounded-md.py-2.px-4.text-primary.text-sm{"aria-controls" => "posts-tab-pane", "data-hs-tab" => "#posts-tab-pane", :href => "javascript:void(0);"}
+                  %i.ri-bill-line.me-1.align-middle.inline-block>
+                  Posts
+                %a#followers-tab.w-full.sm:w-auto.flex.hs-tab-active:font-semibold.hs-tab-active:text-white.hs-tab-active:bg-primary.rounded-md.py-2.px-4.text-primary.text-sm{"aria-controls" => "followers-tab-pane", "data-hs-tab" => "#followers-tab-pane", :href => "javascript:void(0);"}
+                  %i.ri-money-dollar-box-line.me-1.align-middle.inline-block>
+                  Friends
+                %a#gallery-tab.w-full.sm:w-auto.flex.hs-tab-active:font-semibold.hs-tab-active:text-white.hs-tab-active:bg-primary.rounded-md.py-2.px-4.text-primary.text-sm{"aria-controls" => "gallery-tab-pane", "data-hs-tab" => "#gallery-tab-pane", :href => "javascript:void(0);"}
+                  %i.ri-exchange-box-line.me-1.align-middle.inline-block>
+                  Gallery
+              %div
+                %p.font-semibold.mb-2
+                  Profile 60% completed -
+                  %a.text-primary{:class => "text-[0.75rem]", :href => "javascript:void(0);"} Finish now
+                .progress.progress-xs.progress-animate
+                  .progress-bar.bg-primary{"aria-valuemax" => "100", "aria-valuemin" => "0", "aria-valuenow" => "60", :class => "w-[60%]", :role => "progressbar"}
+            %div{:class => "!p-4"}
+              #myTabContent.tab-content
+                #activity-tab-pane.tab-pane.show.active.fade{"aria-labelledby" => "activity-tab", :class => "!p-0 !border-0", :role => "tabpanel", :tabindex => "0"}
+                  %ul.list-none.profile-timeline
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar{:class => "bg-primary/10 !text-primary"} E
+                        %p.mb-2
+                          %b You
+                          Commented on
+                          %b alexander taylor
+                          post
+                          = succeed "." do
+                            %a.text-secondary{:href => "javascript:void(0);"}
+                              %u #beautiful day
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 24,Dec 2022 - 14:34
+                        %p.profile-activity-media.mb-0.flex.w-full.mt-2.sm:mt-0
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/media-17.jpg"}/
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/media-18.jpg"}/
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar
+                          %img{:alt => "", :src => "../assets/images/faces/11.jpg"}/
+                        %p.mb-2{:class => "text-[#8c9097] dark:text-white/50"}
+                          %span.text-default>
+                            %b Json Smith
+                            reacted to the post 👍
+                          \.
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 18,Dec 2022 - 12:16
+                        %p.mb-0{:class => "text-[#8c9097] dark:text-white/50"} Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, repellendus rem rerum excepturi aperiam ipsam temporibus inventore ullam tempora eligendi libero sequi dignissimos cumque, et a sint tenetur consequatur omnis!
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar
+                          %img{:alt => "", :src => "../assets/images/faces/4.jpg"}/
+                        %p.mb-2{:class => "text-[#8c9097] dark:text-white/50"}
+                          %span.text-default>
+                            %b Alicia Keys
+                            shared a document with
+                            %b you
+                          \.
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 21,Dec 2022 - 15:32
+                        %p.profile-activity-media.mb-0.flex.w-full.mt-2.sm:mt-0.items-center
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/file-manager/3.png"}/
+                          %span{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 432.87KB
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar{:class => "bg-success/10 !text-success"} P
+                        %p.mb-4{:class => "text-[#8c9097] dark:text-white/50"}
+                          %span.text-default>
+                            %b You
+                            shared a post with 4 people
+                            %b Simon,Sasha, Anagha,Hishen
+                          \.
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 28,Dec 2022 - 18:46
+                        %p.profile-activity-media.mb-4
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/media-75.jpg"}/
+                        %div
+                          .avatar-list-stacked
+                            %span.avatar.avatar-sm.avatar-rounded
+                              %img{:alt => "img", :src => "../assets/images/faces/2.jpg"}/
+                            %span.avatar.avatar-sm.avatar-rounded
+                              %img{:alt => "img", :src => "../assets/images/faces/8.jpg"}/
+                            %span.avatar.avatar-sm.avatar-rounded
+                              %img{:alt => "img", :src => "../assets/images/faces/2.jpg"}/
+                            %span.avatar.avatar-sm.avatar-rounded
+                              %img{:alt => "img", :src => "../assets/images/faces/10.jpg"}/
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar
+                          %img{:alt => "", :src => "../assets/images/faces/5.jpg"}/
+                        %p.mb-1{:class => "text-[#8c9097] dark:text-white/50"}
+                          %span.text-default>
+                            %b Melissa Blue
+                            liked your post
+                            %b travel excites
+                          \.
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 11,Dec 2022 - 11:18
+                        %p{:class => "text-[#8c9097] dark:text-white/50"} you are already feeling the tense atmosphere of the video playing in the background
+                        %p.profile-activity-media.sm:flex.mb-0
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img.m-1{:alt => "", :src => "../assets/images/media/media-59.jpg"}/
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img.m-1{:alt => "", :src => "../assets/images/media/media-60.jpg"}/
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img.m-1{:alt => "", :src => "../assets/images/media/media-61.jpg"}/
+                    %li
+                      %div
+                        %span.avatar.avatar-sm.avatar-rounded.profile-timeline-avatar
+                          %img{:alt => "", :src => "../assets/images/media/media-39.jpg"}/
+                        %p.mb-1
+                          %b You
+                          Commented on
+                          %b Peter Engola
+                          post
+                          = succeed "." do
+                            %a.text-secondary{:href => "javascript:void(0);"}
+                              %u #Mother Nature
+                          %span.ltr:float-right.rtl:float-left{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 24,Dec 2022 - 14:34
+                        %p{:class => "text-[#8c9097] dark:text-white/50"} Technology id developing rapidly kepp uo your work 👌
+                        %p.profile-activity-media.mb-0.flex.w-full.mt-2.sm:mt-0
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/media-26.jpg"}/
+                          %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                            %img{:alt => "", :src => "../assets/images/media/media-29.jpg"}/
+                #posts-tab-pane.tab-pane.fade.hidden{"aria-labelledby" => "posts-tab", :class => "!p-0 !border-0 !rounded-md", :role => "tabpanel", :tabindex => "0"}
+                  %ul.list-group{:class => "!rounded-md"}
+                    %li.list-group-item
+                      .sm:flex.items-center.leading-none
+                        .me-4
+                          %span.avatar.avatar-md.avatar-rounded
+                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                        .flex-grow
+                          .flex
+                            %input.form-control{"aria-label" => "Recipient's username with two button addons", :class => "!rounded-e-none !w-full", :placeholder => "Recipient's username", :type => "text"}/
+                            %button.ti-btn.ti-btn-light{"aria-label" => "button", :class => "!rounded-none !mb-0", :type => "button"}
+                              %i.bi.bi-emoji-smile
+                            %button.ti-btn.ti-btn-light{"aria-label" => "button", :class => "!rounded-none !mb-0", :type => "button"}
+                              %i.bi.bi-paperclip
+                            %button.ti-btn.ti-btn-light{"aria-label" => "button", :class => "!rounded-none !mb-0", :type => "button"}
+                              %i.bi.bi-camera
+                            %button.ti-btn.bg-primary.text-white{:class => "!mb-0 !rounded-s-none", :type => "button"} Post
+                    %li#profile-posts-scroll.list-group-item{"data-simplebar" => "init"}
+                      .simplebar-wrapper{:style => "margin: -10.4px -20px;"}
+                        .simplebar-height-auto-observer-wrapper
+                          .simplebar-height-auto-observer
+                        .simplebar-mask
+                          .simplebar-offset{:style => "right: 0px; bottom: 0px;"}
+                            .simplebar-content-wrapper{"aria-label" => "scrollable content", :role => "region", :style => "height: auto; overflow: hidden;", :tabindex => "0"}
+                              .simplebar-content{:style => "padding: 10.4px 20px;"}
+                                .grid.grid-cols-12.gap-4
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 24, Dec - 04:32PM
+                                          %p.mb-0{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                          %p.mb-4{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} As opposed to using 'Content here 👌
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        .flex.items-start
+                                          %div
+                                            %span.badge.text-primary.me-2{:class => "bg-primary/10"} Fashion
+                                          %div
+                                            .hs-dropdown.ti-dropdown
+                                              %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                                %i.ti.ti-dots-vertical
+                                              %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 26, Dec - 12:45PM
+                                          %p.mb-1{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"}
+                                            Shared pictures with 4 of friends
+                                            = succeed "." do
+                                              %span Hiren,Sasha,Biden,Thara
+                                          .flex.leading-none.justify-between.mb-4
+                                            %div
+                                              %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                                                %span.avatar.avatar-md.me-1
+                                                  %img{:alt => "", :src => "../assets/images/media/media-52.jpg"}/
+                                              %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                                                %span.avatar.avatar-md.me-1
+                                                  %img{:alt => "", :src => "../assets/images/media/media-56.jpg"}/
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        %div
+                                          .flex.items-start
+                                            %div
+                                              %span.badge.text-success.me-2{:class => "bg-success/10"} Nature
+                                            %div
+                                              .hs-dropdown.ti-dropdown
+                                                %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                                  %i.ti.ti-dots-vertical
+                                                %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                                  %li
+                                                    %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                                  %li
+                                                    %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                                  %li
+                                                    %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                                          .avatar-list-stacked.block.mt-4.text-end
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/2.jpg"}/
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/8.jpg"}/
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/2.jpg"}/
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/10.jpg"}/
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 29, Dec - 09:53AM
+                                          %p.mb-1{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Sharing an article that excites me about nature more than what i thought.
+                                          %p.mb-4.profile-post-link
+                                            %a.text-primary{:class => "text-[0.75rem]", :href => "https://themeforest.net/user/spruko/portfolio", :target => "_blank"}
+                                              %u https://www.discovery.com/ nature/caring-for-coral
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        .flex.items-start
+                                          %div
+                                            %span.badge.text-secondary.me-2{:class => "bg-secondary/10"} Travel
+                                          .hs-dropdown.ti-dropdown
+                                            %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                              %i.ti.ti-dots-vertical
+                                            %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 22, Dec - 11:22PM
+                                          %p.mb-1{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"}
+                                            Shared pictures with 3 of your friends
+                                            = succeed "." do
+                                              %span Maya,Jacob,Amanda
+                                          .flex.leading-none.justify-between.mb-4
+                                            %div
+                                              %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                                                %span.avatar.avatar-md.me-1
+                                                  %img.rounded-md{:alt => "", :src => "../assets/images/media/media-40.jpg"}/
+                                              %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
+                                                %span.avatar.avatar-md.me-1
+                                                  %img.rounded-md{:alt => "", :src => "../assets/images/media/media-45.jpg"}/
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        %div
+                                          .flex.items-start
+                                            %div
+                                              %span.badge.text-secondary.me-2{:class => "bg-success/10"} Nature
+                                            .hs-dropdown.ti-dropdown
+                                              %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                                %i.ti.ti-dots-vertical
+                                              %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                                %li
+                                                  %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                                          .avatar-list-stacked.block.mt-4.text-end
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/1.jpg"}/
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/5.jpg"}/
+                                            %span.avatar.avatar-xs.avatar-rounded
+                                              %img{:alt => "img", :src => "../assets/images/faces/16.jpg"}/
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 18, Dec - 12:28PM
+                                          %p.mb-1{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Followed this author for top class themes with best code you can get in the market.
+                                          %p.mb-4.profile-post-link
+                                            %a.text-primary{:class => "text-[0.75rem]", :href => "https://themeforest.net/user/spruko/portfolio", :target => "_blank"}
+                                              %u https://themeforest.net/user/ spruko/portfolio
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        .flex.items-start
+                                          %div
+                                            %span.badge.text-secondary.me-2{:class => "bg-secondary/10"} Travel
+                                          .hs-dropdown.ti-dropdown
+                                            %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                              %i.ti.ti-dots-vertical
+                                            %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                                  .xxl:col-span-12.xl:col-span-12.lg:col-span-12.md:col-span-12.col-span-12
+                                    .rounded.border{:class => "dark:border-defaultborder/10"}
+                                      .p-4.flex.items-start.flex-wrap
+                                        .me-2
+                                          %span.avatar.avatar-sm.avatar-rounded
+                                            %img{:alt => "", :src => "../assets/images/faces/9.jpg"}/
+                                        .flex-grow
+                                          %p.mb-1.font-semibold.leading-none You
+                                          %p.mb-2{:class => "text-[.6875rem] text-[#8c9097] dark:text-white/50"} 02, Dec - 06:32AM
+                                          %p.mb-0{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                          %p.mb-4{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} There are many variations of passages 👏😍
+                                          .flex.items-center.justify-between.md:mb-0.mb-2
+                                            %div
+                                              .btn-list
+                                                %button.ti-btn.ti-btn-primary.btn-wave{:class => "!me-[.375rem] !py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} Comment
+                                                %button.ti-btn.ti-btn-sm.ti-btn-success{"aria-label" => "button", :class => "!me-[.375rem]", :type => "button"}
+                                                  %i.ri-thumb-up-line
+                                                %button.ti-btn.ti-btn-sm.ti-btn-danger{"aria-label" => "button", :type => "button"}
+                                                  %i.ri-share-line
+                                        .flex.items-start
+                                          %div
+                                            %span.badge.text-primary.me-2{:class => "bg-primary/10"} Fashion
+                                          .hs-dropdown.ti-dropdown
+                                            %button.ti-btn.ti-btn-sm.ti-btn-light{"aria-expanded" => "false", "aria-label" => "button", :type => "button"}
+                                              %i.ti.ti-dots-vertical
+                                            %ul.hs-dropdown-menu.ti-dropdown-menu.hidden
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Delete
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Hide
+                                              %li
+                                                %a.ti-dropdown-item.block{:class => "!py-2 !px-[0.9375rem] !text-[0.8125rem] !font-medium", :href => "javascript:void(0);"} Edit
+                        .simplebar-placeholder{:style => "width: 0px; height: 0px;"}
+                      .simplebar-track.simplebar-horizontal{:style => "visibility: hidden;"}
+                        .simplebar-scrollbar{:style => "width: 0px; display: none;"}
+                      .simplebar-track.simplebar-vertical{:style => "visibility: hidden;"}
+                        .simplebar-scrollbar{:style => "height: 0px; display: none;"}
+                    %li.list-group-item
+                      .text-center
+                        %button.ti-btn.ti-btn-primary{:class => "!font-medium", :type => "button"} Show All
+                #followers-tab-pane.tab-pane.fade.hidden{"aria-labelledby" => "followers-tab", :class => "!p-0 !border-0", :role => "tabpanel", :tabindex => "0"}
+                  .grid.grid-cols-12.sm:gap-x-6
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body.p-6
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/2.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Samantha May
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} samanthamay2912@gmail.com
+                              %span.badge.rounded-full.text-info{:class => "bg-info/10"} Team Member
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body.p-6
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/15.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Andrew Garfield
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} andrewgarfield98@gmail.com
+                              %span.badge.text-success.rounded-full{:class => "bg-success/10"} Team Lead
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body.p-6
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/5.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Jessica Cashew
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} jessicacashew143@gmail.com
+                              %span.badge.rounded-full.text-info{:class => "bg-info/10"} Team Member
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body{:class => "!p-6"}
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/11.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Simon Cowan
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} jessicacashew143@gmail.com
+                              %span.badge.text-warning.rounded-full{:class => "bg-warning/10"} Team Manager
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body.p-6
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/7.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Amanda nunes
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} amandanunes45@gmail.com
+                              %span.badge.rounded-full.text-info{:class => "bg-info/10"} Team Member
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .xxl:col-span-4.xl:col-span-4.lg:col-span-6.md:col-span-6.col-span-12
+                      .box.border{:class => "!shadow-none dark:border-defaultborder/10"}
+                        .box-body.p-6
+                          .text-center
+                            %span.avatar.avatar-xl.avatar-rounded
+                              %img{:alt => "", :src => "../assets/images/faces/12.jpg"}/
+                            .mt-2
+                              %p.mb-0.font-semibold Mahira Hose
+                              %p.mb-1{:class => "text-[0.75rem] opacity-[0.7] text-[#8c9097] dark:text-white/50"} mahirahose9456@gmail.com
+                              %span.badge.rounded-full.text-info{:class => "bg-info/10"} Team Member
+                        .box-footer.text-center
+                          .btn-list
+                            %button.ti-btn.btn-sm.me-1.ti-btn-light{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Block
+                            %button.ti-btn.btn-sm.text-white.bg-primary{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Unfollow
+                    .col-span-12
+                      .text-center{:class => "!mt-4"}
+                        %button.ti-btn.ti-btn-primary.btn-wave{:class => "!font-medium", :type => "button"} Show All
+                #gallery-tab-pane.tab-pane.fade.hidden{"aria-labelledby" => "gallery-tab", :class => "!p-0 !border-0", :role => "tabpanel", :tabindex => "0"}
+                  .grid.grid-cols-12.sm:gap-x-6.gap-y-6
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-40.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-40.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-41.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-41.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-42.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-42.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-43.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-43.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-44.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-44.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-45.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-45.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-46.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-46.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-60.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-60.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-26.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-26.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-32.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-32.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-30.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-30.jpg"}/
+                    .xxl:col-span-3.xl:col-span-3.lg:col-span-3.md:col-span-6.col-span-12
+                      %a.glightbox.card{"data-gallery" => "gallery1", :href => "../assets/images/media/media-31.jpg"}
+                        %img.rounded-md.w-full{:alt => "image", :src => "../assets/images/media/media-31.jpg"}/
+                    .col-span-12
+                      .text-center.mt-6
+                        %button.ti-btn.ti-btn-primary{:class => "!font-medium", :type => "button"} Show All
+      .xl:col-span-4.col-span-12
+        .box
+          .box-header
+            .box-title Personal Info
+          .box-body
+            %ul.list-group
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Name :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Sonya Taylor
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Email :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} sonyataylor231@gmail.com
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Phone :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} +(555) 555-1234
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Designation :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} C.E.O
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Age :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} 28
+              %li.list-group-item
+                .flex.flex-wrap.items-center
+                  .me-2.font-semibold Experience :
+                  %span{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} 10 Years
+      .xl:col-span-4.col-span-12
+        .box
+          .box-header.flex.justify-between
+            .box-title Recent Posts
+            %div
+              %span.badge.text-primary{:class => "bg-primary/10"} Today
+          .box-body
+            %ul.list-group
+              %li.list-group-item
+                %a{:href => "javascript:void(0);"}
+                  .flex.flex-wrap.items-center
+                    %span.avatar.avatar-md.me-4{:class => "!mb-0"}
+                      %img.img-fluid{:alt => "...", :class => "!rounded-md", :src => "../assets/images/media/media-39.jpg"}/
+                    .flex-grow
+                      %p.font-semibold.mb-0 Animals
+                      %p.mb-0.profile-recent-posts.text-truncate{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} There are many variations of passages of Lorem Ipsum available
+              %li.list-group-item
+                %a{:href => "javascript:void(0);"}
+                  .flex.flex-wrap.items-center
+                    %span.avatar.avatar-md.me-4{:class => "!mb-0"}
+                      %img.img-fluid{:alt => "...", :class => "!rounded-md", :src => "../assets/images/media/media-56.jpg"}/
+                    .flex-grow
+                      %p.font-semibold.mb-0 Travel
+                      %p.mb-0.profile-recent-posts.text-truncate{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Latin words, combined with a handful of model sentence
+              %li.list-group-item
+                %a{:href => "javascript:void(0);"}
+                  .flex.flex-wrap.items-center
+                    %span.avatar.avatar-md.me-4{:class => "!mb-0"}
+                      %img.img-fluid{:alt => "...", :class => "!rounded-md", :src => "../assets/images/media/media-54.jpg"}/
+                    .flex-grow
+                      %p.font-semibold.mb-0 Interior
+                      %p.mb-0.profile-recent-posts.text-truncate{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} Contrary to popular belief, Lorem Ipsum is not simply random
+              %li.list-group-item
+                %a{:href => "javascript:void(0);"}
+                  .flex.flex-wrap.items-center
+                    %span.avatar.avatar-md.me-4{:class => "!mb-0"}
+                      %img.img-fluid{:alt => "...", :class => "!rounded-md", :src => "../assets/images/media/media-64.jpg"}/
+                    .flex-grow
+                      %p.font-semibold.mb-0 Nature
+                      %p.mb-0.profile-recent-posts.text-truncate{:class => "text-[0.75rem] text-[#8c9097] dark:text-white/50"} It is a long established fact that a reader will be distracted by the readable content
+      .xl:col-span-4.col-span-12
+        .box
+          .box-header.flex.justify-between
+            .box-title Suggestions
+            %div
+              %button.ti-btn.ti-btn-success{:class => "!py-1 !px-2 !text-[0.75rem] !font-medium", :type => "button"} View All
+          .box-body
+            %ul.list-group
+              %li.list-group-item
+                .flex.items-center.justify-between
+                  .font-semibold.flex.items-center
+                    %span.avatar.avatar-xs.me-2>
+                      %img{:alt => "", :src => "../assets/images/faces/15.jpg"}/
+                    Alister
+                  %div
+                    %button.ti-btn.ti-btn-sm.ti-btn-primary{"aria-label" => "button", :class => "!mb-0", :type => "button"}
+                      %i.ri-add-line
+              %li.list-group-item
+                .flex.items-center.justify-between
+                  .font-semibold.flex.items-center
+                    %span.avatar.avatar-xs.me-2>
+                      %img{:alt => "", :src => "../assets/images/faces/4.jpg"}/
+                    Samantha Sams
+                  %div
+                    %button.ti-btn.ti-btn-sm.ti-btn-primary{"aria-label" => "button", :class => "!mb-0", :type => "button"}
+                      %i.ri-add-line
+              %li.list-group-item
+                .flex.items-center.justify-between
+                  .font-semibold.flex.items-center
+                    %span.avatar.avatar-xs.me-2>
+                      %img{:alt => "", :src => "../assets/images/faces/11.jpg"}/
+                    Jason Mama
+                  %div
+                    %button.ti-btn.ti-btn-sm.ti-btn-primary{"aria-label" => "button", :class => "!mb-0", :type => "button"}
+                      %i.ri-add-line
+              %li.list-group-item
+                .flex.items-center.justify-between
+                  .font-semibold.flex.items-center
+                    %span.avatar.avatar-xs.me-2>
+                      %img{:alt => "", :src => "../assets/images/faces/5.jpg"}/
+                    Alicia Sierra
+                  %div
+                    %button.ti-btn.ti-btn-sm.ti-btn-primary{"aria-label" => "button", :class => "!mb-0", :type => "button"}
+                      %i.ri-add-line
+              %li.list-group-item
+                .flex.items-center.justify-between
+                  .font-semibold.flex.items-center
+                    %span.avatar.avatar-xs.me-2>
+                      %img{:alt => "", :src => "../assets/images/faces/7.jpg"}/
+                    Kiara Advain
+                  %div
+                    %button.ti-btn.ti-btn-sm.ti-btn-primary{"aria-label" => "button", :class => "!mb-0", :type => "button"}
+                      %i.ri-add-line
