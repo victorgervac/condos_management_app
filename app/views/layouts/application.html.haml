@@ -16,9 +16,10 @@
     = javascript_include_tag "application"
     -# = javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module"
     = javascript_importmap_tags
-  %body.page.bg-gray-50
+  %body.page.bg-gray-100
     %main
-    %p.notice= notice
-    %p.alert= alert
-    = render "shared/navbar"
+    -if current_user.present?
+      = render "shared/navbar"
+    %span.notice= notice
+    %span.alert= alert
     = yield

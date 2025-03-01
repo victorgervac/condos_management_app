@@ -1,9 +1,8 @@
 .xl:col-span-6.col-span-12.bg-white.text-black.my-3
-  %div.text-black.bg-zinc-200.py-4.px-1
+  %div.text-black.py-4.px-1
     .justify-between.flex
       .box-title.font-bold Reservations
       %div
-        %button.ti-btn.ti-btn-light.text-white.py-1.px-2.rounded.bg-zinc-800{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} View All
         %button.ti-btn.ti-btn-light.text-white.py-1.px-2.rounded.bg-zinc-800{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Add Reservation
     .box-body
       %ul.list-none.mb-0.personal-upcoming-events
@@ -24,7 +23,7 @@
         %div.flex.justify-between
           %form{action: reservations_path, method: :get}
             %input{name: "tab", value: "expenses", type: "hidden"}/
-            %select{name: "per_page", class: "form-select rounded-full border border-zinc-300 bg-white px-2 py-1 pr-6 hover:border-zinc-400 focus:border-primary dark:border-zinc-450 dark:bg-zinc-700 dark:hover:border-zinc-400 dark:focus:border-accent", data: {controller: "select-and-go", action: "change->select-and-go#choose"}}
+            %select{name: "per_page", class: "form-select rounded-full text-zinc-800 border border-zinc-300 bg-white px-2 py-1 pr-6 hover:border-zinc-400 focus:border-primary dark:border-zinc-450 dark:bg-zinc-700 dark:hover:border-zinc-400 dark:focus:border-accent", data: {controller: "select-and-go", action: "change->select-and-go#choose"}}
               %option{value: 10, selected: @per_page == '10' ? 'selected' : false}
                 10
               %option{value: 30, selected: @per_page == '30' ? 'selected' : false}

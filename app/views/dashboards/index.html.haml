@@ -1,0 +1,187 @@
+%div.px-5
+  .block.justify-between.page-header.md:flex
+    %div
+      %h3.dark:zinc-800.dark:hover:text-white.font-semibold{:class => "!text-defaulttextcolor dark:!text-defaulttextcolor/70 text-[1.125rem]"} Overview
+  %div.grid.grid-cols-12.gap-2
+    .xxl:col-span-4.xl:col-span-4.lg:col-span-12.col-span-12.gap-2
+      = link_to reservations_path class:"box rounded-lg" do
+        .box-body.bg-white.p-3
+          .flex.items-center.mb-5.text-zinc-800
+            .flex.items-center
+              .me-2
+                %span.avatar.avatar-md.avatar-rounded.bg-gray-200.p-2.rounded
+                  %i{class:"fa-solid fa-bed"}
+              .mb-0.font-semibold Reservations
+            .ms-auto
+              #btc-chart{:style => "min-height: 40px;"}
+                #apexchartsjjvsqga5.apexcharts-canvas.apexchartsjjvsqga5.apexcharts-theme-light{:style => "width: 120px; height: 40px;"}
+                  %svg#SvgjsSvg3761.apexcharts-svg{:height => "40", :style => "background: transparent;", :transform => "translate(0, 0)", :version => "1.1", :width => "120", :xmlns => "http://www.w3.org/2000/svg", "xmlns:data" => "ApexChartsNS", "xmlns:svgjs" => "http://svgjs.dev", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %foreignobject{:height => "40", :width => "120", :x => "0", :y => "0"}
+                      .apexcharts-legend{:style => "max-height: 20px;", :xmlns => "http://www.w3.org/1999/xhtml"}
+                    %rect#SvgjsRect3766{:fill => "#fefefe", :height => "0", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "0", :x => "0", :y => "0"}
+                    %g#SvgjsG3829.apexcharts-yaxis{:rel => "0", :transform => "translate(-18, 0)"}
+                    %g#SvgjsG3763.apexcharts-inner.apexcharts-graphical{:transform => "translate(0, 0.75)"}
+                      %defs#SvgjsDefs3762
+                        %clippath#gridRectMaskjjvsqga5
+                          %rect#SvgjsRect3768{:fill => "#fff", :height => "48.5", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "125.5", :x => "-3.5", :y => "-5"}
+                        %clippath#forecastMaskjjvsqga5
+                        %clippath#nonForecastMaskjjvsqga5
+                        %clippath#gridRectMarkerMaskjjvsqga5
+                          %rect#SvgjsRect3769{:fill => "#fff", :height => "42.5", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "124", :x => "-2", :y => "-2"}
+                        %filter#SvgjsFilter3775{:filterunits => "userSpaceOnUse", :height => "200%", :width => "200%", :x => "-50%", :y => "-50%"}
+                          %feflood#SvgjsFeFlood3776{"flood-color" => "#000000", "flood-opacity" => "0.1", :in => "SourceGraphic", :result => "SvgjsFeFlood3776Out"}
+                          %fecomposite#SvgjsFeComposite3777{:in => "SvgjsFeFlood3776Out", :in2 => "SourceAlpha", :operator => "in", :result => "SvgjsFeComposite3777Out"}
+                          %feoffset#SvgjsFeOffset3778{:dx => "0", :dy => "0", :in => "SvgjsFeComposite3777Out", :result => "SvgjsFeOffset3778Out"}
+                          %fegaussianblur#SvgjsFeGaussianBlur3779{:in => "SvgjsFeOffset3778Out", :result => "SvgjsFeGaussianBlur3779Out", :stddeviation => "3 "}
+                          %femerge#SvgjsFeMerge3780{:in => "SourceGraphic", :result => "SvgjsFeMerge3780Out"}
+                            %femergenode#SvgjsFeMergeNode3781{:in => "SvgjsFeGaussianBlur3779Out"}
+                            %femergenode#SvgjsFeMergeNode3782{:in => "[object Arguments]"}
+                          %feblend#SvgjsFeBlend3783{:in => "SourceGraphic", :in2 => "SvgjsFeMerge3780Out", :mode => "normal", :result => "SvgjsFeBlend3783Out"}
+                      %line#SvgjsLine3767.apexcharts-xcrosshairs{:fill => "#b1b9c4", "fill-opacity" => "0.9", :filter => "none", :height => "38.5", :stroke => "#b6b6b6", "stroke-dasharray" => "3", "stroke-linecap" => "butt", "stroke-width" => "1", :width => "1", :x => "0", :x1 => "0", :x2 => "0", :y => "0", :y1 => "0", :y2 => "38.5"}
+                      %g#SvgjsG3784.apexcharts-grid
+                        %g#SvgjsG3785.apexcharts-gridlines-horizontal{:style => "display: none;"}
+                          %line#SvgjsLine3788.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                          %line#SvgjsLine3789.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "3.85", :y2 => "3.85"}
+                          %line#SvgjsLine3790.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "7.7", :y2 => "7.7"}
+                          %line#SvgjsLine3791.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "11.55", :y2 => "11.55"}
+                          %line#SvgjsLine3792.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "15.4", :y2 => "15.4"}
+                          %line#SvgjsLine3793.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "19.25", :y2 => "19.25"}
+                          %line#SvgjsLine3794.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "23.1", :y2 => "23.1"}
+                          %line#SvgjsLine3795.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "26.950000000000003", :y2 => "26.950000000000003"}
+                          %line#SvgjsLine3796.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "30.800000000000004", :y2 => "30.800000000000004"}
+                          %line#SvgjsLine3797.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "34.650000000000006", :y2 => "34.650000000000006"}
+                          %line#SvgjsLine3798.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "38.50000000000001", :y2 => "38.50000000000001"}
+                        %g#SvgjsG3786.apexcharts-gridlines-vertical{:style => "display: none;"}
+                        %line#SvgjsLine3800{:stroke => "transparent", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "38.5", :y2 => "38.5"}
+                        %line#SvgjsLine3799{:stroke => "transparent", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "0", :y1 => "1", :y2 => "38.5"}
+                      %g#SvgjsG3787.apexcharts-grid-borders{:style => "display: none;"}
+                      %g#SvgjsG3770.apexcharts-line-series.apexcharts-plot-series
+                        %g#SvgjsG3771.apexcharts-series{"data:longestseries" => "true", "data:realindex" => "0", :rel => "1", :seriesname => "Value", :zindex => "0"}
+                          %path#SvgjsPath3774.apexcharts-line{"clip-path" => "url(#gridRectMaskjjvsqga5)", :d => "M 0 38.5C 1.826086956521739 38.5 3.391304347826087 21.175 5.217391304347826 21.175C 7.043478260869565 21.175 8.608695652173914 17.71 10.434782608695652 17.71C 12.26086956521739 17.71 13.826086956521738 23.869999999999997 15.652173913043477 23.869999999999997C 17.478260869565215 23.869999999999997 19.043478260869566 16.94 20.869565217391305 16.94C 22.695652173913043 16.94 24.26086956521739 29.259999999999998 26.08695652173913 29.259999999999998C 27.913043478260867 29.259999999999998 29.478260869565215 13.475000000000001 31.304347826086953 13.475000000000001C 33.130434782608695 13.475000000000001 34.69565217391304 26.564999999999998 36.52173913043478 26.564999999999998C 38.34782608695652 26.564999999999998 39.91304347826087 24.255 41.73913043478261 24.255C 43.565217391304344 24.255 45.130434782608695 23.485 46.95652173913043 23.485C 48.78260869565217 23.485 50.347826086956516 14.629999999999999 52.17391304347826 14.629999999999999C 54 14.629999999999999 55.565217391304344 18.865 57.391304347826086 18.865C 59.21739130434782 18.865 60.78260869565217 25.025 62.60869565217391 25.025C 64.43478260869564 25.025 66 22.715 67.82608695652173 22.715C 69.65217391304347 22.715 71.21739130434783 25.025 73.04347826086956 25.025C 74.8695652173913 25.025 76.43478260869566 28.105 78.26086956521739 28.105C 80.08695652173913 28.105 81.65217391304348 2.6950000000000003 83.47826086956522 2.6950000000000003C 85.30434782608695 2.6950000000000003 86.8695652173913 18.095 88.69565217391303 18.095C 90.52173913043477 18.095 92.08695652173913 15.015 93.91304347826086 15.015C 95.7391304347826 15.015 97.30434782608695 28.105 99.13043478260869 28.105C 100.95652173913042 28.105 102.52173913043478 17.71 104.34782608695652 17.71C 106.17391304347825 17.71 107.73913043478261 21.945 109.56521739130434 21.945C 111.39130434782608 21.945 112.95652173913044 31.185 114.78260869565217 31.185C 116.6086956521739 31.185 118.17391304347825 20.79 119.99999999999999 20.79", :fill => "none", "fill-opacity" => "1", "fill-rule" => "evenodd", :filter => "url(#SvgjsFilter3775)", :index => "0", :pathfrom => "M -1 38.5 L -1 38.5 L 5.217391304347826 38.5 L 10.434782608695652 38.5 L 15.652173913043477 38.5 L 20.869565217391305 38.5 L 26.08695652173913 38.5 L 31.304347826086953 38.5 L 36.52173913043478 38.5 L 41.73913043478261 38.5 L 46.95652173913043 38.5 L 52.17391304347826 38.5 L 57.391304347826086 38.5 L 62.60869565217391 38.5 L 67.82608695652173 38.5 L 73.04347826086956 38.5 L 78.26086956521739 38.5 L 83.47826086956522 38.5 L 88.69565217391303 38.5 L 93.91304347826086 38.5 L 99.13043478260869 38.5 L 104.34782608695652 38.5 L 109.56521739130434 38.5 L 114.78260869565217 38.5 L 119.99999999999999 38.5", :pathto => "M 0 38.5C 1.826086956521739 38.5 3.391304347826087 21.175 5.217391304347826 21.175C 7.043478260869565 21.175 8.608695652173914 17.71 10.434782608695652 17.71C 12.26086956521739 17.71 13.826086956521738 23.869999999999997 15.652173913043477 23.869999999999997C 17.478260869565215 23.869999999999997 19.043478260869566 16.94 20.869565217391305 16.94C 22.695652173913043 16.94 24.26086956521739 29.259999999999998 26.08695652173913 29.259999999999998C 27.913043478260867 29.259999999999998 29.478260869565215 13.475000000000001 31.304347826086953 13.475000000000001C 33.130434782608695 13.475000000000001 34.69565217391304 26.564999999999998 36.52173913043478 26.564999999999998C 38.34782608695652 26.564999999999998 39.91304347826087 24.255 41.73913043478261 24.255C 43.565217391304344 24.255 45.130434782608695 23.485 46.95652173913043 23.485C 48.78260869565217 23.485 50.347826086956516 14.629999999999999 52.17391304347826 14.629999999999999C 54 14.629999999999999 55.565217391304344 18.865 57.391304347826086 18.865C 59.21739130434782 18.865 60.78260869565217 25.025 62.60869565217391 25.025C 64.43478260869564 25.025 66 22.715 67.82608695652173 22.715C 69.65217391304347 22.715 71.21739130434783 25.025 73.04347826086956 25.025C 74.8695652173913 25.025 76.43478260869566 28.105 78.26086956521739 28.105C 80.08695652173913 28.105 81.65217391304348 2.6950000000000003 83.47826086956522 2.6950000000000003C 85.30434782608695 2.6950000000000003 86.8695652173913 18.095 88.69565217391303 18.095C 90.52173913043477 18.095 92.08695652173913 15.015 93.91304347826086 15.015C 95.7391304347826 15.015 97.30434782608695 28.105 99.13043478260869 28.105C 100.95652173913042 28.105 102.52173913043478 17.71 104.34782608695652 17.71C 106.17391304347825 17.71 107.73913043478261 21.945 109.56521739130434 21.945C 111.39130434782608 21.945 112.95652173913044 31.185 114.78260869565217 31.185C 116.6086956521739 31.185 118.17391304347825 20.79 119.99999999999999 20.79", :stroke => "rgba(38,191,148,0.85)", "stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-opacity" => "1", "stroke-width" => "1.5"}
+                          %g#SvgjsG3772.apexcharts-series-markers-wrap.apexcharts-hidden-element-shown{"data:realindex" => "0"}
+                            %g.apexcharts-series-markers
+                              %circle#SvgjsCircle3833.apexcharts-marker.wml2zbf1e.no-pointer-events{:cx => "0", :cy => "0", "default-marker-size" => "0", :fill => "#26bf94", "fill-opacity" => "1", :r => "0", :stroke => "#ffffff", "stroke-opacity" => "0.9", "stroke-width" => "2"}
+                        %g#SvgjsG3773.apexcharts-datalabels{"data:realindex" => "0"}
+                      %line#SvgjsLine3801.apexcharts-ycrosshairs{:stroke => "#b6b6b6", "stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-width" => "1", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                      %line#SvgjsLine3802.apexcharts-ycrosshairs-hidden{"stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-width" => "0", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                      %g#SvgjsG3803.apexcharts-xaxis{:transform => "translate(0, 0)"}
+                        %g#SvgjsG3804.apexcharts-xaxis-texts-g{:transform => "translate(0, 4)"}
+                      %g#SvgjsG3830.apexcharts-yaxis-annotations
+                      %g#SvgjsG3831.apexcharts-xaxis-annotations
+                      %g#SvgjsG3832.apexcharts-point-annotations
+                  .apexcharts-tooltip.apexcharts-theme-light
+                    .apexcharts-tooltip-title{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px;"}
+                    .apexcharts-tooltip-series-group{:style => "order: 1;"}
+                      %span.apexcharts-tooltip-marker{:style => "background-color: rgb(38, 191, 148);"}
+                      .apexcharts-tooltip-text{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px;"}
+                        .apexcharts-tooltip-y-group
+                          %span.apexcharts-tooltip-text-y-label
+                          %span.apexcharts-tooltip-text-y-value
+                        .apexcharts-tooltip-goals-group
+                          %span.apexcharts-tooltip-text-goals-label
+                          %span.apexcharts-tooltip-text-goals-value
+                        .apexcharts-tooltip-z-group
+                          %span.apexcharts-tooltip-text-z-label
+                          %span.apexcharts-tooltip-text-z-value
+                  .apexcharts-yaxistooltip.apexcharts-yaxistooltip-0.apexcharts-yaxistooltip-left.apexcharts-theme-light
+                    .apexcharts-yaxistooltip-text
+          .flex.items-end.text-zinc-800
+            %div
+              %p.mb-1 USD
+              %p.mb-0.font-semibold.leading-none="#{Reservation.all.inject(0){|res,el| res + (el.total_price || 0)}}"
+            .ms-auto.text-end
+              %p.mb-0="#{Reservation.count}"
+              %p.mb-0{:class => ""}
+                %span{:class => ""}> Vol:
+                (+2.33%)
+      = link_to listings_path class: "box rounded-lg" do
+        .box-body.bg-white.p-3.mt-3
+          .flex.items-center.mb-5.text-zinc-800
+            .flex.items-center
+              .me-2
+                %span.avatar.avatar-md.avatar-rounded.bg-gray-200.p-2.rounded
+                  %i{class:"fa-solid fa-hotel"}
+              .mb-0.font-semibold Condos
+            .ms-auto
+              #btc-chart{:style => "min-height: 40px;"}
+                #apexchartsjjvsqga5.apexcharts-canvas.apexchartsjjvsqga5.apexcharts-theme-light{:style => "width: 120px; height: 40px;"}
+                  %svg#SvgjsSvg3761.apexcharts-svg{:height => "40", :style => "background: transparent;", :transform => "translate(0, 0)", :version => "1.1", :width => "120", :xmlns => "http://www.w3.org/2000/svg", "xmlns:data" => "ApexChartsNS", "xmlns:svgjs" => "http://svgjs.dev", "xmlns:xlink" => "http://www.w3.org/1999/xlink"}
+                    %foreignobject{:height => "40", :width => "120", :x => "0", :y => "0"}
+                      .apexcharts-legend{:style => "max-height: 20px;", :xmlns => "http://www.w3.org/1999/xhtml"}
+                    %rect#SvgjsRect3766{:fill => "#fefefe", :height => "0", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "0", :x => "0", :y => "0"}
+                    %g#SvgjsG3829.apexcharts-yaxis{:rel => "0", :transform => "translate(-18, 0)"}
+                    %g#SvgjsG3763.apexcharts-inner.apexcharts-graphical{:transform => "translate(0, 0.75)"}
+                      %defs#SvgjsDefs3762
+                        %clippath#gridRectMaskjjvsqga5
+                          %rect#SvgjsRect3768{:fill => "#fff", :height => "48.5", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "125.5", :x => "-3.5", :y => "-5"}
+                        %clippath#forecastMaskjjvsqga5
+                        %clippath#nonForecastMaskjjvsqga5
+                        %clippath#gridRectMarkerMaskjjvsqga5
+                          %rect#SvgjsRect3769{:fill => "#fff", :height => "42.5", :opacity => "1", :rx => "0", :ry => "0", :stroke => "none", "stroke-dasharray" => "0", "stroke-width" => "0", :width => "124", :x => "-2", :y => "-2"}
+                        %filter#SvgjsFilter3775{:filterunits => "userSpaceOnUse", :height => "200%", :width => "200%", :x => "-50%", :y => "-50%"}
+                          %feflood#SvgjsFeFlood3776{"flood-color" => "#000000", "flood-opacity" => "0.1", :in => "SourceGraphic", :result => "SvgjsFeFlood3776Out"}
+                          %fecomposite#SvgjsFeComposite3777{:in => "SvgjsFeFlood3776Out", :in2 => "SourceAlpha", :operator => "in", :result => "SvgjsFeComposite3777Out"}
+                          %feoffset#SvgjsFeOffset3778{:dx => "0", :dy => "0", :in => "SvgjsFeComposite3777Out", :result => "SvgjsFeOffset3778Out"}
+                          %fegaussianblur#SvgjsFeGaussianBlur3779{:in => "SvgjsFeOffset3778Out", :result => "SvgjsFeGaussianBlur3779Out", :stddeviation => "3 "}
+                          %femerge#SvgjsFeMerge3780{:in => "SourceGraphic", :result => "SvgjsFeMerge3780Out"}
+                            %femergenode#SvgjsFeMergeNode3781{:in => "SvgjsFeGaussianBlur3779Out"}
+                            %femergenode#SvgjsFeMergeNode3782{:in => "[object Arguments]"}
+                          %feblend#SvgjsFeBlend3783{:in => "SourceGraphic", :in2 => "SvgjsFeMerge3780Out", :mode => "normal", :result => "SvgjsFeBlend3783Out"}
+                      %line#SvgjsLine3767.apexcharts-xcrosshairs{:fill => "#b1b9c4", "fill-opacity" => "0.9", :filter => "none", :height => "38.5", :stroke => "#b6b6b6", "stroke-dasharray" => "3", "stroke-linecap" => "butt", "stroke-width" => "1", :width => "1", :x => "0", :x1 => "0", :x2 => "0", :y => "0", :y1 => "0", :y2 => "38.5"}
+                      %g#SvgjsG3784.apexcharts-grid
+                        %g#SvgjsG3785.apexcharts-gridlines-horizontal{:style => "display: none;"}
+                          %line#SvgjsLine3788.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                          %line#SvgjsLine3789.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "3.85", :y2 => "3.85"}
+                          %line#SvgjsLine3790.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "7.7", :y2 => "7.7"}
+                          %line#SvgjsLine3791.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "11.55", :y2 => "11.55"}
+                          %line#SvgjsLine3792.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "15.4", :y2 => "15.4"}
+                          %line#SvgjsLine3793.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "19.25", :y2 => "19.25"}
+                          %line#SvgjsLine3794.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "23.1", :y2 => "23.1"}
+                          %line#SvgjsLine3795.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "26.950000000000003", :y2 => "26.950000000000003"}
+                          %line#SvgjsLine3796.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "30.800000000000004", :y2 => "30.800000000000004"}
+                          %line#SvgjsLine3797.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "34.650000000000006", :y2 => "34.650000000000006"}
+                          %line#SvgjsLine3798.apexcharts-gridline{:stroke => "#e0e0e0", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "38.50000000000001", :y2 => "38.50000000000001"}
+                        %g#SvgjsG3786.apexcharts-gridlines-vertical{:style => "display: none;"}
+                        %line#SvgjsLine3800{:stroke => "transparent", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "120", :y1 => "38.5", :y2 => "38.5"}
+                        %line#SvgjsLine3799{:stroke => "transparent", "stroke-dasharray" => "0", "stroke-linecap" => "butt", :x1 => "0", :x2 => "0", :y1 => "1", :y2 => "38.5"}
+                      %g#SvgjsG3787.apexcharts-grid-borders{:style => "display: none;"}
+                      %g#SvgjsG3770.apexcharts-line-series.apexcharts-plot-series
+                        %g#SvgjsG3771.apexcharts-series{"data:longestseries" => "true", "data:realindex" => "0", :rel => "1", :seriesname => "Value", :zindex => "0"}
+                          %path#SvgjsPath3774.apexcharts-line{"clip-path" => "url(#gridRectMaskjjvsqga5)", :d => "M 0 38.5C 1.826086956521739 38.5 3.391304347826087 21.175 5.217391304347826 21.175C 7.043478260869565 21.175 8.608695652173914 17.71 10.434782608695652 17.71C 12.26086956521739 17.71 13.826086956521738 23.869999999999997 15.652173913043477 23.869999999999997C 17.478260869565215 23.869999999999997 19.043478260869566 16.94 20.869565217391305 16.94C 22.695652173913043 16.94 24.26086956521739 29.259999999999998 26.08695652173913 29.259999999999998C 27.913043478260867 29.259999999999998 29.478260869565215 13.475000000000001 31.304347826086953 13.475000000000001C 33.130434782608695 13.475000000000001 34.69565217391304 26.564999999999998 36.52173913043478 26.564999999999998C 38.34782608695652 26.564999999999998 39.91304347826087 24.255 41.73913043478261 24.255C 43.565217391304344 24.255 45.130434782608695 23.485 46.95652173913043 23.485C 48.78260869565217 23.485 50.347826086956516 14.629999999999999 52.17391304347826 14.629999999999999C 54 14.629999999999999 55.565217391304344 18.865 57.391304347826086 18.865C 59.21739130434782 18.865 60.78260869565217 25.025 62.60869565217391 25.025C 64.43478260869564 25.025 66 22.715 67.82608695652173 22.715C 69.65217391304347 22.715 71.21739130434783 25.025 73.04347826086956 25.025C 74.8695652173913 25.025 76.43478260869566 28.105 78.26086956521739 28.105C 80.08695652173913 28.105 81.65217391304348 2.6950000000000003 83.47826086956522 2.6950000000000003C 85.30434782608695 2.6950000000000003 86.8695652173913 18.095 88.69565217391303 18.095C 90.52173913043477 18.095 92.08695652173913 15.015 93.91304347826086 15.015C 95.7391304347826 15.015 97.30434782608695 28.105 99.13043478260869 28.105C 100.95652173913042 28.105 102.52173913043478 17.71 104.34782608695652 17.71C 106.17391304347825 17.71 107.73913043478261 21.945 109.56521739130434 21.945C 111.39130434782608 21.945 112.95652173913044 31.185 114.78260869565217 31.185C 116.6086956521739 31.185 118.17391304347825 20.79 119.99999999999999 20.79", :fill => "none", "fill-opacity" => "1", "fill-rule" => "evenodd", :filter => "url(#SvgjsFilter3775)", :index => "0", :pathfrom => "M -1 38.5 L -1 38.5 L 5.217391304347826 38.5 L 10.434782608695652 38.5 L 15.652173913043477 38.5 L 20.869565217391305 38.5 L 26.08695652173913 38.5 L 31.304347826086953 38.5 L 36.52173913043478 38.5 L 41.73913043478261 38.5 L 46.95652173913043 38.5 L 52.17391304347826 38.5 L 57.391304347826086 38.5 L 62.60869565217391 38.5 L 67.82608695652173 38.5 L 73.04347826086956 38.5 L 78.26086956521739 38.5 L 83.47826086956522 38.5 L 88.69565217391303 38.5 L 93.91304347826086 38.5 L 99.13043478260869 38.5 L 104.34782608695652 38.5 L 109.56521739130434 38.5 L 114.78260869565217 38.5 L 119.99999999999999 38.5", :pathto => "M 0 38.5C 1.826086956521739 38.5 3.391304347826087 21.175 5.217391304347826 21.175C 7.043478260869565 21.175 8.608695652173914 17.71 10.434782608695652 17.71C 12.26086956521739 17.71 13.826086956521738 23.869999999999997 15.652173913043477 23.869999999999997C 17.478260869565215 23.869999999999997 19.043478260869566 16.94 20.869565217391305 16.94C 22.695652173913043 16.94 24.26086956521739 29.259999999999998 26.08695652173913 29.259999999999998C 27.913043478260867 29.259999999999998 29.478260869565215 13.475000000000001 31.304347826086953 13.475000000000001C 33.130434782608695 13.475000000000001 34.69565217391304 26.564999999999998 36.52173913043478 26.564999999999998C 38.34782608695652 26.564999999999998 39.91304347826087 24.255 41.73913043478261 24.255C 43.565217391304344 24.255 45.130434782608695 23.485 46.95652173913043 23.485C 48.78260869565217 23.485 50.347826086956516 14.629999999999999 52.17391304347826 14.629999999999999C 54 14.629999999999999 55.565217391304344 18.865 57.391304347826086 18.865C 59.21739130434782 18.865 60.78260869565217 25.025 62.60869565217391 25.025C 64.43478260869564 25.025 66 22.715 67.82608695652173 22.715C 69.65217391304347 22.715 71.21739130434783 25.025 73.04347826086956 25.025C 74.8695652173913 25.025 76.43478260869566 28.105 78.26086956521739 28.105C 80.08695652173913 28.105 81.65217391304348 2.6950000000000003 83.47826086956522 2.6950000000000003C 85.30434782608695 2.6950000000000003 86.8695652173913 18.095 88.69565217391303 18.095C 90.52173913043477 18.095 92.08695652173913 15.015 93.91304347826086 15.015C 95.7391304347826 15.015 97.30434782608695 28.105 99.13043478260869 28.105C 100.95652173913042 28.105 102.52173913043478 17.71 104.34782608695652 17.71C 106.17391304347825 17.71 107.73913043478261 21.945 109.56521739130434 21.945C 111.39130434782608 21.945 112.95652173913044 31.185 114.78260869565217 31.185C 116.6086956521739 31.185 118.17391304347825 20.79 119.99999999999999 20.79", :stroke => "rgba(38,191,148,0.85)", "stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-opacity" => "1", "stroke-width" => "1.5"}
+                          %g#SvgjsG3772.apexcharts-series-markers-wrap.apexcharts-hidden-element-shown{"data:realindex" => "0"}
+                            %g.apexcharts-series-markers
+                              %circle#SvgjsCircle3833.apexcharts-marker.wml2zbf1e.no-pointer-events{:cx => "0", :cy => "0", "default-marker-size" => "0", :fill => "#26bf94", "fill-opacity" => "1", :r => "0", :stroke => "#ffffff", "stroke-opacity" => "0.9", "stroke-width" => "2"}
+                        %g#SvgjsG3773.apexcharts-datalabels{"data:realindex" => "0"}
+                      %line#SvgjsLine3801.apexcharts-ycrosshairs{:stroke => "#b6b6b6", "stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-width" => "1", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                      %line#SvgjsLine3802.apexcharts-ycrosshairs-hidden{"stroke-dasharray" => "0", "stroke-linecap" => "butt", "stroke-width" => "0", :x1 => "0", :x2 => "120", :y1 => "0", :y2 => "0"}
+                      %g#SvgjsG3803.apexcharts-xaxis{:transform => "translate(0, 0)"}
+                        %g#SvgjsG3804.apexcharts-xaxis-texts-g{:transform => "translate(0, 4)"}
+                      %g#SvgjsG3830.apexcharts-yaxis-annotations
+                      %g#SvgjsG3831.apexcharts-xaxis-annotations
+                      %g#SvgjsG3832.apexcharts-point-annotations
+                  .apexcharts-tooltip.apexcharts-theme-light
+                    .apexcharts-tooltip-title{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px;"}
+                    .apexcharts-tooltip-series-group{:style => "order: 1;"}
+                      %span.apexcharts-tooltip-marker{:style => "background-color: rgb(38, 191, 148);"}
+                      .apexcharts-tooltip-text{:style => "font-family: Helvetica, Arial, sans-serif; font-size: 12px;"}
+                        .apexcharts-tooltip-y-group
+                          %span.apexcharts-tooltip-text-y-label
+                          %span.apexcharts-tooltip-text-y-value
+                        .apexcharts-tooltip-goals-group
+                          %span.apexcharts-tooltip-text-goals-label
+                          %span.apexcharts-tooltip-text-goals-value
+                        .apexcharts-tooltip-z-group
+                          %span.apexcharts-tooltip-text-z-label
+                          %span.apexcharts-tooltip-text-z-value
+                  .apexcharts-yaxistooltip.apexcharts-yaxistooltip-0.apexcharts-yaxistooltip-left.apexcharts-theme-light
+                    .apexcharts-yaxistooltip-text
+          .flex.items-end.text-zinc-800
+            %div
+              %p.mb-1 Total
+              %p.mb-0.font-semibold.leading-none= Listing.count
+            .ms-auto.text-end
+              %p.mb-0 $0.04
+              %p.mb-0{:class => ""}
+                %span{:class => ""}> Vol:
+                (+2.33%)
+
