@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :reservations
   resources :listings
   resources :users
-
+  resources :cleaning_tasks
 end

@@ -20,7 +20,7 @@ class InsertPlaceToDb
 
   def build_obj
     @json_data['result'].each do |p|
-      listing = Listing.where(id: p['id']).first_or_initialize
+      listing = Listing.where(hostaway_id: p['id']).first_or_initialize
       listing.attributes = {
         name: p['name'],
         internal_listing_name: p['internalListingName'],
@@ -31,7 +31,11 @@ class InsertPlaceToDb
         address: p['address'],
         zipcode: p['zipcode'],
         price: p['price'],
-        cleaning_fee: p['cleaningFee']
+        cleaning_fee: p['cleaningFee'],
+        hostaway_id: p['id'],
+        language: p['language'],
+        description: p['description'],
+        check_in_time_start: p['checkInTimeStart']
       }
 
       @errors << { id: p['id'], errors: listing.errors.full_messages } unless listing.save!

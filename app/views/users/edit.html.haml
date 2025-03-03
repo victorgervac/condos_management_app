@@ -1,0 +1,506 @@
+%div.px-5.bg-white
+  .xl:col-span-6.col-span-12.bg-white.text-zinc-800
+    = form_with model: @user, url: user_path, class: "p-4" do |form|
+      .box.text-zinc-800.bg-white.text-zinc-800
+        .box-header.justify-between
+          .box-title Form grid
+          .prism-toggle
+            %button.ti-btn.ti-btn-primary{:class => "!py-1 !px-2 !font-medium", :type => "button"}
+              Show Code
+              %i.ri-code-line.ms-2.inline-block.align-middle
+        .box-body
+          .grid.grid-cols-12.sm:gap-x-6.sm:gap-y-4
+            .md:col-span-6.col-span-12.mb-4
+              %label.form-label First Name
+              = form.text_field :first_name , class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
+            .md:col-span-6.col-span-12.mb-4
+              %label.form-label Last Name
+              = form.text_field :last_name , class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
+            .md:col-span-6.col-span-12.mb-4.sm:mb-0
+              %label.form-label Address
+              .grid.grid-cols-12.sm:gap-x-4
+                .xl:col-span-12.col-span-12.mb-4
+                  %input.form-control{"aria-label" => "Street", :placeholder => "Street", :type => "text"}/
+                .xl:col-span-12.col-span-12.mb-4
+                  %input.form-control{"aria-label" => "Landmark", :placeholder => "Landmark", :type => "text"}/
+                .xxl:col-span-6.xl:col-span-12.col-span-12.mb-4
+                  %input.form-control{"aria-label" => "City", :placeholder => "City", :type => "text"}/
+                .xxl:col-span-6.xl:col-span-12.col-span-12.mb-4
+                  %select#inputState1.form-select{:class => "!py-[0.59rem]"}
+                    %option{:selected => "selected"} State
+                    %option ...
+                .xxl:col-span-6.xl:col-span-12.col-span-12.xxl:mb-0.mb-4
+                  %input.form-control{"aria-label" => "Postal/Zip code", :placeholder => "Postal/Zip code", :type => "text"}/
+                .xxl:col-span-6.xl:col-span-12.col-span-12
+                  %select#inputCountry.form-select{:class => "!py-[0.59rem]"}
+                    %option{:selected => "selected"} Country
+                    %option ...
+            .md:col-span-6.col-span-12
+              .grid.grid-cols-12
+                .xl:col-span-12.col-span-12.mb-4
+                  %label.form-label Email
+                  %input.form-control{"aria-label" => "email", :placeholder => "Email", :type => "email"}/
+                .xl:col-span-12.col-span-12.mb-4
+                  %label.form-label D.O.B
+                  %input.form-control{"aria-label" => "dateofbirth", :type => "date"}/
+                .xl:col-span-12.col-span-12.mb-4
+                  .grid.grid-cols-12.gap-3
+                    %label.form-label.mb-1.xl:col-span-12.col-span-12 Maritial Status
+                    .xl:col-span-6.col-span-12
+                      .form-check
+                        %input#status-married.form-check-input{:name => "status-married", :type => "radio", :value => ""}/
+                        %label.form-check-label{:for => "status-married"} Married
+                    .xl:col-span-6.col-span-12
+                      .form-check
+                        %input#status-unmarried.form-check-input{:checked => "checked", :name => "status-married", :type => "radio", :value => ""}/
+                        %label.form-check-label{:for => "status-unmarried"} Single
+                .xl:col-span-12.col-span-12
+            .md:col-span-6.col-span-12.mb-4.sm:mb-0
+              %label.form-label Contact Number
+              %input.form-control{"aria-label" => "Phone number", :placeholder => "Phone number", :type => "number"}/
+            .md:col-span-6.col-span-12.mb-4.sm:mb-0
+              %label.form-label Alternative Contact
+              %input.form-control{"aria-label" => "Phone number", :placeholder => "Phone number", :type => "number"}/
+            .md:col-span-12.col-span-12.mb-4.sm:mb-0
+              .form-check.mb-4
+                %input#gridCheck.form-check-input{:type => "checkbox"}/
+                %label.form-check-label{:for => "gridCheck"} Check me out
+            .md:col-span-12.col-span-12
+              %button.ti-btn.ti-btn-primary-full{:class => "!mb-0", :type => "submit"} Sign in
+        .box-footer.hidden.border-t-0
+          / Prism Code
+          %pre.language-html{:tabindex => "0"}
+            %code.language-html
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "grid" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "md:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              = succeed "First" do
+                %span.token.tag
+                  %span.token.tag
+                    %span.token.punctuation> <
+                    label
+                  %span.token.attr-name class
+                  %span.token.attr-value
+                    %span.token.punctuation.attr-equals =
+                    = succeed "form-label" do
+                      %span.token.punctuation "
+                    %span.token.punctuation "
+                  %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  label
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "First" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "First" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "md:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              = succeed "Last" do
+                %span.token.tag
+                  %span.token.tag
+                    %span.token.punctuation> <
+                    label
+                  %span.token.attr-name class
+                  %span.token.attr-value
+                    %span.token.punctuation.attr-equals =
+                    = succeed "form-label" do
+                      %span.token.punctuation "
+                    %span.token.punctuation "
+                  %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  label
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Last" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Last" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "md:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              = succeed "Address" do
+                %span.token.tag
+                  %span.token.tag
+                    %span.token.punctuation> <
+                    label
+                  %span.token.attr-name class
+                  %span.token.attr-value
+                    %span.token.punctuation.attr-equals =
+                    = succeed "form-label" do
+                      %span.token.punctuation "
+                    %span.token.punctuation "
+                  %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  label
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "grid" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xl:col-span-12" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Street" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Street" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xl:col-span-12" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Landmark" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Landmark" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xxl:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "City" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "City" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xxl:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  select
+                %span.token.attr-name id
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "inputState1" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-select" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              = succeed "State" do
+                %span.token.tag
+                  %span.token.tag
+                    %span.token.punctuation> <
+                    option
+                  %span.token.attr-name selected
+                  %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  option
+                %span.token.punctuation >
+              = succeed "..." do
+                %span.token.tag
+                  %span.token.tag
+                    %span.token.punctuation> <
+                    option
+                  %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  option
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  select
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xxl:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  input
+                %span.token.attr-name type
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "text" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "form-control" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name placeholder
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Postal/Zip" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.attr-name aria-label
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "Postal/Zip" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> </
+                  div
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  div
+                %span.token.attr-name class
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =
+                  = succeed "xxl:col-span-6" do
+                    %span.token.punctuation "
+                  %span.token.punctuation "
+                %span.token.punctuation >
+              %span.token.tag
+                %span.token.tag
+                  %span.token.punctuation> <
+                  select
+                %span.token.attr-name id
+                %span.token.attr-value
+                  %span.token.punctuation.attr-equals =

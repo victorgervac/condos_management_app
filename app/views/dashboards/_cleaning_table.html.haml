@@ -1,0 +1,28 @@
+%div.px-1.py-4
+  .xl:col-span-12.col-span-12.text-zinc-800.bg-white
+    .box.custom-card.text-zinc-800
+      .box-header
+        .box-title Todays Cleanings Task
+      .box-body{:class => "!p-0"}
+        .table-responsive
+          %table.table.whitespace-nowrap.min-w-full.mb-0.text-zinc-800
+            %thead
+              %tr
+                %th.text-center.text-zinc-800{:scope => "col"} S.no
+                %th.text-start{:scope => "col"} listing Name
+                %th.text-start{:scope => "col"} Category
+                %th.text-start{:scope => "col"} Status
+                %th.text-start{:scope => "col"} Cleaning Fee
+            %tbody.top-selling
+              %tr.border-y.border-inherit.border-solid{:class => "dark:border-defaultborder/10"}
+                - cleaning_tasks.each do |task|
+                  %td.text-center.leading-none
+                    %span.avatar.avatar-md{:class => "!rounded-full"}
+                      %img.p-2.bg-light{:alt => "", :class => "!rounded-full", :src => "../assets/images/ecommerce/png/36.png"}/
+                  %td= task.lissting?.name
+                  %td Bags
+                  %td
+                    %span.badge.badge-sm.text-success{:class => "bg-success/10 !font-normal"}= task.status
+                  %td
+                    %span.font-semibold= task.lisiting.fee
+              

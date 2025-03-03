@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_03_205959) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "cleaning_tasks", force: :cascade do |t|
+    t.datetime "cleaning_date"
+    t.bigint "reservation_id", null: false
+    t.bigint "listing_id", null: false
+    t.decimal "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status"
+    t.integer "hostaway_id"
+    t.index ["listing_id"], name: "index_cleaning_tasks_on_listing_id"
+    t.index ["reservation_id"], name: "index_cleaning_tasks_on_reservation_id"
+  end
 
   create_table "hosts", force: :cascade do |t|
     t.integer "hostaway_id"
@@ -75,6 +88,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
     t.string "contact_email"
     t.string "contact_address"
     t.string "language"
+    t.integer "hostaway_id"
+    t.integer "listing_map_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -112,6 +127,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
     t.string "listing_name"
     t.string "arrival_date"
     t.string "departure_date"
+    t.integer "listing_map_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -133,9 +149,14 @@ ActiveRecord::Schema[7.0].define(version: 2025_02_28_050156) do
     t.integer "failed_attempts", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "role"
+    t.boolean "active"
+    t.date "access_start_date"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cleaning_tasks", "listings"
+  add_foreign_key "cleaning_tasks", "reservations"
   add_foreign_key "messages", "reservations"
 end

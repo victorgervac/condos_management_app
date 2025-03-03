@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cleaning_date: 2025-03-01 14:52:15
+  reservation: one
+  listing: one
+  total: 9.99
+
+two:
+  cleaning_date: 2025-03-01 14:52:15
+  reservation: two
+  listing: two
+  total: 9.99

@@ -14,11 +14,13 @@ class AuthHostAway
       token = JSON.parse(response.body)['access_token']
       token_type = JSON.parse(response.body)['token_type']
 
-      puts "get listings: #{response.status}"
+      puts "Auth:#{response.status}"
       list_res = GetHostAwayListings.run_this(token, token_type)
-      puts "get Reservation: #{response.status}"
+      puts "GetHostAwayListings: #{list_res}"
       rese_res = GetReservation.run_this(token, token_type)
-      puts "lol:#{list_res}#{rese_res}"
+      puts "GetReservation:#{rese_res}"
+      clean_res = GetCleaningTasks.run_this(token, token_type)
+      puts "GetCleaningTasks:#{clean_res}"
     else
       @errors << response
       puts "why error: #{response}"

@@ -12,7 +12,7 @@ class GetReservation
   def all_that
     Rails.cache.fetch(response = HTTP.headers(headers).get(api_url))
     json_data = JSON.parse(response)
-    FetchStays.run(json_data: json_data)
+    InsertReservations.run(json_data: json_data)
   end
 
   def api_url
