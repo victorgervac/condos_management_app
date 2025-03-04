@@ -13,13 +13,13 @@
                 %th.text-start{:scope => "col"} Listing Name
                 %th.text-start{:scope => "col"} Cleaning Fee
             %tbody.top-selling
-              - cleaning_tasks.order(cleaning_date: :desc).each do |task|
+              - cleaning_tasks.order(cleaning_date: :asc).each do |task|
                 %tr.border-y.border-inherit.border-solid{:class => "dark:border-defaultborder/10"}
                   -listing = Listing.where(id: task.listing_id).first
                   %td.leading-none
                     %span.badge.rounded-lg.bg-gray-200.px-4.py-1{:class => "bg-success/10 !font-normal"}= (task.status || "None")
                   %td
-                    %span= task.cleaning_date.us_date
+                    %span= task.cleaning_date
                   %td= listing.name
                   %td
                     %span.font-semibold= number_to_currency(listing.cleaning_fee)

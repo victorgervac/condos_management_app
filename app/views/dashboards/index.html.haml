@@ -88,7 +88,7 @@
           .flex.items-end.text-zinc-800
             %div
               %p.mb-1 USD
-              %p.mb-0.font-semibold.leading-none="#{Reservation.all.inject(0){|res,el| res + (el.total_price || 0)}}"
+              %p.mb-0.font-semibold.leading-none="#{number_to_currency(Reservation.all.inject(0){|res,el| res + (el.total_price || 0)})}"
             .ms-auto.text-end
               %p.mb-0="#{Reservation.count}"
               %p.mb-0{:class => ""}
@@ -268,7 +268,7 @@
           .flex.items-end.text-zinc-800
             %div
               %p.mb-1 USD
-              %p.mb-0.font-semibold.leading-none="#{CleaningTask.all.inject(0){|res,el| res + (el.total || 0)}}"
+              %p.mb-0.font-semibold.leading-none="#{number_to_currency(CleaningTask.all.inject(0){|res,el| res + (el.listing.cleaning_fee || 0)})}"
             .ms-auto.text-end
               %p.mb-0="#{CleaningTask.count}"
               %p.mb-0{:class => ""}

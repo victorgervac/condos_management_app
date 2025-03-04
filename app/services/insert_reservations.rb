@@ -30,7 +30,7 @@ class InsertReservations
         guest_email: p['guestEmail'],
         check_in: p['checkIn'],
         check_out: p['checkOut'],
-        total_price: p['total_price'],
+        total_price: p['totalPrice'],
         status: p['status'],
         guest_zip_code: p['guestZipCode'],
         guest_address: p['guestAddress'],
