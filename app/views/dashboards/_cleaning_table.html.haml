@@ -8,22 +8,19 @@
           %table.table.whitespace-nowrap.min-w-full.mb-0.text-zinc-800
             %thead
               %tr
-                %th.text-center.text-zinc-800{:scope => "col"} S.no
-                %th.text-start{:scope => "col"} listing Name
-                %th.text-start{:scope => "col"} Category
                 %th.text-start{:scope => "col"} Status
+                %th.text-start{:scope => "col"} Cleaning Date
+                %th.text-start{:scope => "col"} Listing Name
                 %th.text-start{:scope => "col"} Cleaning Fee
             %tbody.top-selling
-              %tr.border-y.border-inherit.border-solid{:class => "dark:border-defaultborder/10"}
-                - cleaning_tasks.each do |task|
-                  -listing = Listing.where(id: task.listing_id)
-                  %td.text-center.leading-none
-                    %span.avatar.avatar-md{:class => "!rounded-full"}
-                      %img.p-2.bg-light{:alt => "", :class => "!rounded-full", :src => "../assets/images/ecommerce/png/36.png"}/
+              - cleaning_tasks.each do |task|
+                %tr.border-y.border-inherit.border-solid{:class => "dark:border-defaultborder/10"}
+                  -listing = Listing.where(id: task.listing_id).first
+                  %td.leading-none
+                    %span.badge.badge-sm.text-success{:class => "bg-success/10 !font-normal"}= (task.status || "None")
+                  %td
+                    %span= task.cleaning_date
                   %td= listing.name
-                  %td Bags
                   %td
-                    %span.badge.badge-sm.text-success{:class => "bg-success/10 !font-normal"}= task.status
-                  %td
-                    %span.font-semibold= listing.inspect
+                    %span.font-semibold= listing.cleaning_fee
               

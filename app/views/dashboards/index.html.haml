@@ -177,10 +177,10 @@
                     .apexcharts-yaxistooltip-text
           .flex.items-end.text-zinc-800
             %div
-              %p.mb-1 Total
-              %p.mb-0.font-semibold.leading-none= Listing.count
+              %p.mb-1 USD
+              %p.mb-0.font-semibold.leading-none= "#{Listing.all.order(price: :desc).last.price} - #{ Listing.all.order(price: :desc).first.price}"
             .ms-auto.text-end
-              %p.mb-0 $0.04
+              %p.mb-0= Listing.count
               %p.mb-0{:class => ""}
                 %span{:class => ""}> Vol:
                 (+2.33%)
