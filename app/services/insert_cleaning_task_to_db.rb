@@ -20,17 +20,15 @@ class InsertCleaningTaskToDb
 
   def build_obj
     @json_data['result'].each do |p|
-      Rails.logger.info(p.inspect)
+      # Rails.logger.info(p.inspect)
       cleaning_task = CleaningTask.where(hostaway_id: p['id']).first_or_initialize
       reservation = Reservation.where(id: p['reservationId']).first
       next unless reservation
 
-      listing = Listing.where(name: p['title']).first
-      Rails.logger.info("#{listing}::#{reservation}")
       cleaning_task.attributes = {
         total: p['expense'],
         reservation_id: reservation.id,
-        listing: listing.id
+        listing_id: reservation.listing_map_id
       }
 
       @errors << { id: p['id'], errors: cleaning_task.errors.full_messages } unless cleaning_task.save!

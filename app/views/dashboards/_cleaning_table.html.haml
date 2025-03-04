@@ -16,13 +16,14 @@
             %tbody.top-selling
               %tr.border-y.border-inherit.border-solid{:class => "dark:border-defaultborder/10"}
                 - cleaning_tasks.each do |task|
+                  -listing = Listing.where(id: task.listing_id)
                   %td.text-center.leading-none
                     %span.avatar.avatar-md{:class => "!rounded-full"}
                       %img.p-2.bg-light{:alt => "", :class => "!rounded-full", :src => "../assets/images/ecommerce/png/36.png"}/
-                  %td= task.lissting?.name
+                  %td= listing.name
                   %td Bags
                   %td
                     %span.badge.badge-sm.text-success{:class => "bg-success/10 !font-normal"}= task.status
                   %td
-                    %span.font-semibold= task.lisiting.fee
+                    %span.font-semibold= listing.inspect
               
