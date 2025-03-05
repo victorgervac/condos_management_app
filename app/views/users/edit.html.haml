@@ -39,21 +39,7 @@
               .grid.grid-cols-12
                 .xl:col-span-12.col-span-12.mb-4
                   %label.form-label Email
-                  %input.form-control{"aria-label" => "email", :placeholder => "Email", :type => "email"}/
-                .xl:col-span-12.col-span-12.mb-4
-                  %label.form-label D.O.B
-                  %input.form-control{"aria-label" => "dateofbirth", :type => "date"}/
-                .xl:col-span-12.col-span-12.mb-4
-                  .grid.grid-cols-12.gap-3
-                    %label.form-label.mb-1.xl:col-span-12.col-span-12 Maritial Status
-                    .xl:col-span-6.col-span-12
-                      .form-check
-                        %input#status-married.form-check-input{:name => "status-married", :type => "radio", :value => ""}/
-                        %label.form-check-label{:for => "status-married"} Married
-                    .xl:col-span-6.col-span-12
-                      .form-check
-                        %input#status-unmarried.form-check-input{:checked => "checked", :name => "status-married", :type => "radio", :value => ""}/
-                        %label.form-check-label{:for => "status-unmarried"} Single
+                  = form.text_field :email , placeholder: "email",class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
                 .xl:col-span-12.col-span-12
             .md:col-span-6.col-span-12.mb-4.sm:mb-0
               %label.form-label Contact Number

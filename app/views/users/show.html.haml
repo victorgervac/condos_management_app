@@ -19,12 +19,11 @@
             .flex-grow.main-profile-info
               .flex.items-center{:class => "!justify-between"}
                 %h6.font-semibold.mb-1.text-zinc-800{:class => "text-[1rem]"}= @user.name.titleize
-                =link_to edit_user_registration_path do
-                  %i.ri-add-line.me-1.align-middle.inline-block
-                  Edit Password
-                =link_to edit_user_path do
-                  %i.ri-add-line.me-1.align-middle.inline-block
-                  Edit User
+                %div.grid.grid-cols-2.gap-3
+                  =link_to edit_user_registration_path ,class: "underline" do
+                    Edit Password
+                  =link_to edit_user_path, class: "underline" do
+                    Edit User
               %p.mb-1{:class => "!text-zinc-800 opacity-[0.7]"} Chief Executive Officer (C.E.O)
               %p.text-zinc-800.mb-6{:class => "text-[0.75rem] opacity-[0.5]"}
                 %span.me-4.inline-flex
@@ -63,15 +62,15 @@
             %p.mb-2.me-6.font-semibold{:class => "text-[.9375rem]"} Contact Information :
             %div{:class => "text-zinc-800/50"}
               %p.mb-2
-                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800 dark:text-white/50"}
-                  %i.ri-mail-line.align-middle{:class => "text-[.875rem] text-zinc-800 dark:text-white/50"}
+                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800"}
+                  %i.ri-mail-line.align-middle{:class => "text-[.875rem] text-zinc-800 "}
                 sonyataylor2531@gmail.com
               %p.mb-2
-                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800 dark:text-white/50"}
-                  %i.ri-phone-line.align-middle{:class => "text-[.875rem] text-zinc-800 dark:text-white/50"}
+                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800"}
+                  %i.ri-phone-line.align-middle{:class => "text-[.875rem] text-zinc-800"}
                 +(555) 555-1234
               %p.mb-0
-                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800 dark:text-white/50"}
-                  %i.ri-map-pin-line.align-middle{:class => "text-[.875rem] text-zinc-800 dark:text-white/50"}
+                %span.avatar.avatar-sm.avatar-rounded.me-2.bg-light{:class => "text-zinc-800"}
+                  %i.ri-map-pin-line.align-middle{:class => "text-[.875rem] text-zinc-800"}
                 MIG-1-11, Monroe Street, Georgetown, Washington D.C, USA,20071
         
