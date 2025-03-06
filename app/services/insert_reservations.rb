@@ -18,6 +18,7 @@ class InsertReservations
   def build_obj
     @json_data['result'].each do |p|
       new_p = Reservation.where(hostaway_id: p['id']).first_or_initialize
+      raise "#{p.keys.inspect}/#{p.values.inspect}"
 
       new_p.attributes = {
         listing_name: p['listing_name'],

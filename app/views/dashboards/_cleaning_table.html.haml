@@ -19,7 +19,7 @@
                   %td.leading-none
                     %span.badge.rounded-lg.bg-gray-200.px-4.py-1{:class => "bg-success/10 !font-normal"}= (task.status || "None")
                   %td
-                    %span= task.cleaning_date
+                    %p.text-xs{data: { controller: 'jsdate', data: task.cleaning_date.to_i}}
                   %td= listing.name
                   %td
                     %span.font-semibold= number_to_currency(listing.cleaning_fee)
