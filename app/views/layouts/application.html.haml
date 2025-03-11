@@ -13,8 +13,8 @@
     = stylesheet_link_tag "main", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "all-themes", "inter-font", "data-turbo-track": "reload"
  
-    = javascript_include_tag "application"
-    -# = javascript_include_tag "application", "data-turbo-track": "reload", defer: true, type: "module"
+    -# = javascript_include_tag "application"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
     = javascript_importmap_tags
   %body.page.bg-gray-100
     %main

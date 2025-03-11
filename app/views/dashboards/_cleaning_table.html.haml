@@ -1,5 +1,5 @@
 %div.px-1.py-4
-  .xl:col-span-12.col-span-12.text-zinc-800.bg-white
+  .xl:col-span-12.col-span-12.text-zinc-800.bg-white{controller: "hello"}
     .box.custom-card.text-zinc-800
       .box-header
         .box-title Todays Cleanings Task
@@ -19,13 +19,12 @@
                   %td.leading-none
                     %span.badge.rounded-lg.bg-gray-200.px-4.py-1{:class => "bg-success/10 !font-normal"}= (task.status || "None")
                   %td
-                    %p.text-xs{data: { controller: 'jsdate', data: task.cleaning_date.to_i}}
+                    %p.text-xs{data: { controller:'date-time-style', data: task.cleaning_date.to_i}}
                   %td= listing.name
                   %td
                     %span.font-semibold= number_to_currency(listing.cleaning_fee)
     %div.flex.justify-between.text-zinc-800
       %form{action: root_path, method: :get}
-        %input.text-zinc-800{name: "tab", value: "expenses", type: "hidden"}/
         %select{name: "per_page", class: "mt-2 text-zinc-800 form-select rounded-full border border-zinc-300 px-2 py-1 pr-6 hover:border-zinc-400 focus:border-primary dark:border-zinc-450 dark:bg-zinc-200 dark:hover:border-zinc-400 dark:focus:border-accent", data: {controller: "select-and-go", action: "change->select-and-go#choose"}}
           %option.text-zinc-800{value: 10, selected: @per_page == '10' ? 'selected' : false}
             10
