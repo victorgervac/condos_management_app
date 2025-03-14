@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="date-time-style"
 export default class extends Controller {
   connect() {
-    debugger
+
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone
     const scope = this.data.scope.outlets.controllerElement
     let fromDate = scope.dataset.data
