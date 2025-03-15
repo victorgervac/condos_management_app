@@ -7,5 +7,3 @@ import { application } from "./application"
 import DateTimeStyleController from "./date_time_style_controller"
 application.register("date-time-style", DateTimeStyleController)
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
