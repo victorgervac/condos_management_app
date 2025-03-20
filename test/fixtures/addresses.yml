@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  addressable: one
+  addressable_type: Addressable
+
+two:
+  addressable: two
+  addressable_type: Addressable
