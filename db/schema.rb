@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_20_042823) do
+ActiveRecord::Schema[7.0].define(version: 2025_03_25_185325) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -108,6 +108,29 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_20_042823) do
     t.string "language"
     t.integer "hostaway_id"
     t.integer "listing_map_id"
+    t.decimal "average_review_rating", precision: 5, scale: 2
+    t.string "room_type"
+    t.string "bathroom_type"
+    t.integer "bedrooms_number"
+    t.integer "beds_number"
+    t.string "bed_type"
+    t.integer "bathrooms_number"
+    t.integer "min_nights"
+    t.integer "max_nights"
+    t.integer "guests_included"
+    t.decimal "price_for_extra_person", precision: 8, scale: 2
+    t.boolean "instant_bookable"
+    t.integer "instant_bookable_lead_time"
+    t.boolean "allow_same_day_booking"
+    t.integer "same_day_booking_lead_time"
+    t.string "wifi_username"
+    t.string "wifi_password"
+    t.boolean "is_rental_agreement_active", default: false
+    t.text "listing_agreement_text"
+    t.boolean "insurance_eligibility_status", default: false
+    t.string "airbnb_listing_url"
+    t.string "vrbo_listing_url"
+    t.string "google_vr_listing_url"
   end
 
   create_table "messages", force: :cascade do |t|
