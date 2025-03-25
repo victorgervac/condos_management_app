@@ -7,3 +7,5 @@ import { application } from "./application"
 import DateTimeStyleController from "./date_time_style_controller"
 application.register("date-time-style", DateTimeStyleController)
 
+import SelectAndGoController from "./select_and_go_controller"
+application.register("select-and-go", SelectAndGoController)
