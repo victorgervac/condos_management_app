@@ -169,6 +169,88 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_25_190051) do
     t.string "arrival_date"
     t.string "departure_date"
     t.integer "listing_map_id"
+    t.integer "channel_id"
+    t.string "source"
+    t.string "channel_name"
+    t.string "reservation_id"
+    t.integer "hostaway_reservation_id"
+    t.string "channel_reservation_id"
+    t.string "external_property_id"
+    t.string "external_rate_plan_id"
+    t.string "external_unit_id"
+    t.integer "assignee_user_id"
+    t.string "manual_ical_id"
+    t.string "manual_ical_name"
+    t.boolean "is_processed", default: false
+    t.boolean "is_initial", default: false
+    t.boolean "is_manually_checked", default: false
+    t.boolean "is_instant_booked", default: false
+    t.boolean "has_pull_error", default: false
+    t.datetime "reservation_date"
+    t.datetime "pending_expire_date"
+    t.string "guest_external_account_id"
+    t.boolean "is_guest_identity_verified", default: false
+    t.boolean "is_guest_verified_by_email", default: false
+    t.boolean "is_guest_verified_by_work_email", default: false
+    t.boolean "is_guest_verified_by_facebook", default: false
+    t.boolean "is_guest_verified_by_government_id", default: false
+    t.boolean "is_guest_verified_by_phone", default: false
+    t.boolean "is_guest_verified_by_reviews", default: false
+    t.integer "number_of_guests"
+    t.integer "adults"
+    t.integer "children"
+    t.integer "infants"
+    t.integer "pets"
+    t.boolean "is_dates_unspecified", default: false
+    t.date "previous_arrival_date"
+    t.date "previous_departure_date"
+    t.string "check_in_time"
+    t.string "check_out_time"
+    t.integer "nights"
+    t.string "phone"
+    t.decimal "tax_amount", precision: 10, scale: 2
+    t.decimal "channel_commission_amount", precision: 10, scale: 2
+    t.decimal "hostaway_commission_amount", precision: 10, scale: 2
+    t.decimal "cleaning_fee", precision: 10, scale: 2
+    t.decimal "security_deposit_fee", precision: 10, scale: 2
+    t.boolean "is_paid", default: false
+    t.string "payment_method"
+    t.string "stripe_guest_id"
+    t.string "currency"
+    t.datetime "cancellation_date"
+    t.string "cancelled_by"
+    t.text "host_note"
+    t.text "guest_note"
+    t.string "guest_locale"
+    t.string "door_code"
+    t.string "door_code_vendor"
+    t.string "door_code_instruction"
+    t.text "comment"
+    t.string "confirmation_code"
+    t.decimal "airbnb_expected_payout_amount", precision: 10, scale: 2
+    t.decimal "airbnb_listing_base_price", precision: 10, scale: 2
+    t.decimal "airbnb_listing_cancellation_host_fee", precision: 10, scale: 2
+    t.decimal "airbnb_listing_cancellation_payout", precision: 10, scale: 2
+    t.decimal "airbnb_listing_cleaning_fee", precision: 10, scale: 2
+    t.decimal "airbnb_listing_host_fee", precision: 10, scale: 2
+    t.decimal "airbnb_listing_security_price", precision: 10, scale: 2
+    t.decimal "airbnb_occupancy_tax_amount_paid_to_host", precision: 10, scale: 2
+    t.decimal "airbnb_total_paid_amount", precision: 10, scale: 2
+    t.decimal "airbnb_transient_occupancy_tax_paid_amount", precision: 10, scale: 2
+    t.string "airbnb_cancellation_policy"
+    t.boolean "is_starred", default: false
+    t.boolean "is_archived", default: false
+    t.boolean "is_pinned", default: false
+    t.string "original_channel"
+    t.integer "customer_user_id"
+    t.string "rental_agreement_file_url"
+    t.string "reservation_agreement"
+    t.decimal "remaining_balance", precision: 10, scale: 2
+    t.string "insurance_status"
+    t.string "claim_status"
+    t.integer "insurance_policy_id"
+    t.integer "cancellation_policy_id"
+    t.string "host_proxy_email"
   end
 
   create_table "users", force: :cascade do |t|

@@ -41,7 +41,7 @@ class AddMissingAttributesToReservations < ActiveRecord::Migration[7.0]
     add_column :reservations, :check_out_time, :string
     add_column :reservations, :nights, :integer
     add_column :reservations, :phone, :string
-    add_column :reservations, :total_price, :decimal, precision: 10, scale: 2
+
     add_column :reservations, :tax_amount, :decimal, precision: 10, scale: 2
     add_column :reservations, :channel_commission_amount, :decimal, precision: 10, scale: 2
     add_column :reservations, :hostaway_commission_amount, :decimal, precision: 10, scale: 2
@@ -51,7 +51,7 @@ class AddMissingAttributesToReservations < ActiveRecord::Migration[7.0]
     add_column :reservations, :payment_method, :string
     add_column :reservations, :stripe_guest_id, :string
     add_column :reservations, :currency, :string
-    add_column :reservations, :status, :string
+
     add_column :reservations, :cancellation_date, :datetime
     add_column :reservations, :cancelled_by, :string
     add_column :reservations, :host_note, :text
