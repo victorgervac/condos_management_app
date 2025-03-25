@@ -2,7 +2,7 @@
   =link_to root_path do
     %i{class:"fa-solid fa-bars text-black text-lg"}
   %div.flex.gap-3.items-center
-    = link_to "#{current_user.first_name.titleize || "Please add name"}", user_path(current_user.id), class: "text-blue-500 font-bolde"
+    = link_to "#{current_user.first_name&.titleize || "Please add name"}", user_path(current_user.id), class: "text-blue-500 font-bolde"
     %div.flex.items-center
       = button_to destroy_user_session_path, method: :delete, data: {turbo: false}, class: "text-red-500 text-lg font-bold " do
         %i{class:"fa-solid fa-right-from-bracket"}

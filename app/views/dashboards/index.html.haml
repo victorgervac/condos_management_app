@@ -4,7 +4,7 @@
       %h3.dark:zinc-800.dark:hover:text-white.font-semibold{:class => "!text-defaulttextcolor dark:!text-defaulttextcolor/70 text-[1.125rem]"} Overview
   %div.grid.grid-cols-12.gap-2
     .xxl:col-span-4.xl:col-span-4.lg:col-span-12.col-span-12.gap-6.lg:flex
-      = link_to reservations_path class:"box rounded-lg " do
+      = link_to reservations_path ,class:"box rounded-lg " do
         .box-body.bg-white.p-3.my-3.lg:my-0
           .flex.items-center.mb-5.text-zinc-800
             .flex.items-center
@@ -94,7 +94,7 @@
               %p.mb-0{:class => ""}
                 %span{:class => ""}> Vol:
                 (+2.33%)
-      = link_to listings_path class: "box rounded-lg" do
+      = link_to listings_path, class: "box rounded-lg" do
         .box-body.bg-white.p-3
           .flex.items-center.mb-5.text-zinc-800
             .flex.items-center
@@ -184,7 +184,7 @@
               %p.mb-0{:class => ""}
                 %span{:class => ""}> Vol:
                 (+2.33%)
-      = link_to reservations_path class:"box rounded-lg " do
+      = link_to reservations_path, class:"box rounded-lg " do
         .box-body.bg-white.p-3.my-3.lg:my-0
           .flex.items-center.mb-5.text-zinc-800
             .flex.items-center
