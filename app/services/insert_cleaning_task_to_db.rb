@@ -23,6 +23,7 @@ class InsertCleaningTaskToDb
       # Rails.logger.info(p.inspect)
       cleaning_task = CleaningTask.where(hostaway_id: p['id']).first_or_initialize
       reservation = Reservation.where(id: p['reservationId']).first
+      raise p['reservationId'].inspect
       next unless reservation
 
       cleaning_task.attributes = {
