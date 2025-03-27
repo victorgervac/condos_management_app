@@ -1,6 +1,6 @@
 %div.flex.justify-between
   %form{action: url, method: :get}
-    %input{name: "tab", value: "expenses", type: "hidden"}/
+    -# %input{name: "tab", value: "dashboard", type: "hidden"}/
     %select{name: "per_page", class: "form-select rounded-full text-zinc-800 border border-zinc-300 bg-white px-2 py-1 pr-6 hover:border-zinc-400 focus:border-primary dark:border-zinc-450 dark:bg-zinc-700 dark:hover:border-zinc-400 dark:focus:border-accent", data: {controller: "select-and-go", action: "change->select-and-go#choose"}}
       %option{value: 10, selected: per_page == '10' ? 'selected' : false}
         10
