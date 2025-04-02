@@ -15,7 +15,25 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
 
-  def create; end
+  def create
+    @listing = Listing.new(listing_params)
+    respond_to do |format|
+      if @listing.save!
+        raise @listing.inspect
+      else
+        flash[:alert] = "could not create new schedule becuase #{@listing.joined_errors}"
+        format.html
+        # format.turbo_stream { render(layout: false) }
+      end
+    end
+  end
 
   def update; end
+
+  private
+
+  def listing_params
+    params.require(:listing).permit(:name, :external_listing_name, :internal_listing_name, :description, :state,
+                                    :city, :street, :address, :zipcode, :price, :bedrooms_number, :beds_number, :cleaning_fee, :bathrooms_number)
+  end
 end
