@@ -3,7 +3,8 @@
     .justify-between.flex
       .box-title.font-bold Listings
       %div
-        %button.ti-btn.ti-btn-light.text-white.py-1.px-2.rounded.bg-zinc-800{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Add Listings
+        = link_to "Add Listings", new_listing_url, class: "ti-btn ti-btn-light text-white py-1 px-2 rounded bg-zinc-800 !py-1 !px-2 !text-[0.75rem]"
+
     .box-body
       %ul.list-none.mb-0.personal-upcoming-events
         -@records.each do |lis|
@@ -25,4 +26,3 @@
       %div{class: "text-xs+"}
         = "#{@pagy.from} - #{@pagy.to} of #{@pagy.count} entries"
 
-   

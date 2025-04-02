@@ -1,0 +1,60 @@
+= form_for listing, url: url, method: :post, html: { class: 'space-y-6 bg-white p-6 rounded-lg shadow-md' } do |f|
+  .grid.grid-cols-2.gap-4
+    .form-group
+      = f.label :name, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :name, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :external_listing_name, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :external_listing_name, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :internal_listing_name, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :internal_listing_name, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group.col-span-2
+      = f.label :description, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_area :description, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 h-24'
+  
+    .form-group
+      = f.label :state, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :state, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :city, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :city, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :street, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :street, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :address, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :address, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :zipcode, class: 'block text-sm font-medium text-zinc-900'
+      = f.text_field :zipcode, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :price, class: 'block text-sm font-medium text-zinc-900'
+      = f.number_field :price, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :bedrooms_number, class: 'block text-sm font-medium text-zinc-900'
+      = f.number_field :bedrooms_number, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :beds_number, class: 'block text-sm font-medium text-zinc-900'
+      = f.number_field :beds_number, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :cleaning_fee, class: 'block text-sm font-medium text-zinc-900'
+      = f.number_field :cleaning_fee, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+    .form-group
+      = f.label :bathrooms_number, class: 'block text-sm font-medium text-zinc-900'
+      = f.number_field :bathrooms_number, class: 'mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500'
+  
+  .flex.justify-end.mt-4
+    = f.submit 'Submit', class: 'px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-md hover:bg-indigo-700'

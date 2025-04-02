@@ -6,4 +6,16 @@ class ListingsController < ApplicationController
     @listings = Listing.all
     @pagy, @records = pagy(@listings, items: @per_page)
   end
+
+  def show; end
+
+  def edit; end
+
+  def new
+    @listing = Listing.new
+  end
+
+  def create; end
+
+  def update; end
 end
