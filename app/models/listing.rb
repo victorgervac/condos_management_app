@@ -1,3 +1,3 @@
 class Listing < ApplicationRecord
-  validate :name, :address
+  validates :name, :address, presence: true
 end

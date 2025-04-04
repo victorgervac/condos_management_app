@@ -9,7 +9,9 @@ class ListingsController < ApplicationController
 
   def show; end
 
-  def edit; end
+  def edit
+    @listing = Listing.find(params[:id])
+  end
 
   def new
     @listing = Listing.new
@@ -19,22 +21,33 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     respond_to do |format|
       if @listing.save!
-        raise @listing.inspect
+        format.html { redirect_to listings_path, notice: 'Succefully created listing' }
       else
-        flash[:alert] = "could not create new schedule becuase #{@listing.joined_errors}"
-        format.html
-        # format.turbo_stream { render(layout: false) }
+        format.html do
+          redirect_to request.referrer, alert: "could not create new listing becuase #{@listing.joined_errors}"
+        end
       end
     end
   end
 
-  def update; end
+  def update
+    @listing = Listing.find(listing_params[:id])
+    respond_to do |format|
+      if @listing.update!
+        format.html { redirect_to listing_path(@listing.id), notice: 'Succefully updated listing' }
+      else
+        format.html do
+          redirect_to request.referrer, alert: "could not create new listing becuase #{@listing.joined_errors}"
+        end
+
+      end
+    end
+  end
 
   private
 
   def listing_params
-    params.require(:listing).permit(:name, :external_listing_name, :internal_listing_name, :description, :state,
+    params.require(:listing).permit(:id, :name, :external_listing_name, :internal_listing_name, :description, :state,
                                     :city, :street, :address, :zipcode, :price, :bedrooms_number, :beds_number, :cleaning_fee, :bathrooms_number)
   end
 end
-
