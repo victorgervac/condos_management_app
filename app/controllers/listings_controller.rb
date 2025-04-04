@@ -7,7 +7,9 @@ class ListingsController < ApplicationController
     @pagy, @records = pagy(@listings, items: @per_page)
   end
 
-  def show; end
+  def show
+    @listing = Listing.find(params[:id])
+  end
 
   def edit
     @listing = Listing.find(params[:id])
