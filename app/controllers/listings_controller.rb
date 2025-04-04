@@ -37,3 +37,4 @@ class ListingsController < ApplicationController
                                     :city, :street, :address, :zipcode, :price, :bedrooms_number, :beds_number, :cleaning_fee, :bathrooms_number)
   end
 end
+

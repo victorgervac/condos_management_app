@@ -1,3 +1,3 @@
 class Listing < ApplicationRecord
-  validate :name
+  validate :name, :address
 end
