@@ -25,4 +25,4 @@
                   %td= listing.name
                   %td
                     %span.font-semibold= number_to_currency(listing.cleaning_fee)
-    =render partial: "/shared/pagination", locals: {per_page: @per_page, pagy: @pagy , url: root_path}
+    =render partial: "/shared/pagination", locals: {per_page: @per_page, pagy: @pagy , url: root_path, objects: @cleaning_tasks}

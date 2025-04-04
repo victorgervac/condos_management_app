@@ -8,7 +8,6 @@
     .box-body
       %ul.list-none.mb-0.personal-upcoming-events
         -@records.each do |lis|
-      
           %li.py-3
             .flex
               .me-2
@@ -21,7 +20,7 @@
                   %span.block{:class => " text-[0.75rem]"}Address:
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=lis.address
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}="#{lis.city}, #{lis.state} #{lis.zipcode}"
-    = render partial: "/shared/pagination", locals: {per_page: @per_page , pagy: @pagy , url: reservations_path }
+    = render partial: "/shared/pagination", locals: {per_page: @per_page , pagy: @pagy , url: reservations_path ,objects: @listings}
     .flex.flex-col.justify-between.space-y-4.px-4.py-4.sm:flex-row.sm:items-center.sm:space-y-0.sm:px-5
       %div{class: "text-xs+"}
         = "#{@pagy.from} - #{@pagy.to} of #{@pagy.count} entries"

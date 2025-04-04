@@ -23,7 +23,7 @@
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=res.arrival_date
                   %span.block Departure Date:
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=res.departure_date
-      =render partial: "/shared/pagination", locals: {per_page: @per_page , pagy: @pagy , url: reservations_path }
+      =render partial: "/shared/pagination", locals: {per_page: @per_page , pagy: @pagy , url: reservations_path ,objects: @records}
 
             
           
