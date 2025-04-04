@@ -16,10 +16,16 @@
               .flex-grow.flex-col
                 %span
                   %span.text-primary.font-semibold=(lis.name || "Guest Name")
-                %div.flex
-                  %span.block{:class => " text-[0.75rem]"}Address:
-                  %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=lis.address
-                  %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}="#{lis.city}, #{lis.state} #{lis.zipcode}"
+                  %div.flex.justify-between
+                    %div.flex
+                      %span.block{:class => " text-[0.75rem]"}Address:
+                      %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=lis.address
+                      %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}="#{lis.city}, #{lis.state} #{lis.zipcode}"
+                      %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}="#{lis.city}, #{lis.state} #{lis.zipcode}"
+                    -if current_user.admin?
+                      %div
+                        = button_to listing_path(lis.id), method: :delete, data: {turbo: false}, class: "py-2 px-3 rounded zinc-800 h-11 w-full font-medium text-pink-700  hover:bg-pink-700/20" do
+                          Delete
     = render partial: "/shared/pagination", locals: {per_page: @per_page , pagy: @pagy , url: reservations_path ,objects: @listings}
     .flex.flex-col.justify-between.space-y-4.px-4.py-4.sm:flex-row.sm:items-center.sm:space-y-0.sm:px-5
       %div{class: "text-xs+"}

@@ -46,6 +46,20 @@ class ListingsController < ApplicationController
     end
   end
 
+  def destroy
+    @listing = Listing.find(params[:id])
+    respond_to do |format|
+      if @listing.delete
+        format.html { redirect_to listings_path, notice: 'Succefully deleted listing' }
+      else
+        format.html do
+          redirect_to request.referrer, alert: "could not deleted listing becuase #{@listing.joined_errors}"
+        end
+
+      end
+    end
+  end
+
   private
 
   def listing_params
