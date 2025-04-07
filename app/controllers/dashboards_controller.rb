@@ -5,7 +5,7 @@ class DashboardsController < ApplicationController
 
     @todays_cleaning_tasks = CleaningTask.all
     @pagy, @records = pagy(@todays_cleaning_tasks, items: @per_page)
-    AuthHostAway.run if params[:fetch_data]
+    AuthHostAway.run(data_type: params[:fetch_data]) if params[:fetch_data]
     # where(cleaning_date: Date.today..(Date.tomorrow + 5.days))
   end
 end

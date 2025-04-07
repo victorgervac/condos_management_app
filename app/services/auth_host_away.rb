@@ -1,11 +1,12 @@
 class AuthHostAway
   require 'http'
-  def initialize
+  def initialize(fetch_type)
+    @fetch_type = fetch_type
     @errors = []
   end
 
-  def self.run
-    new.post
+  def self.run(fetch_type)
+    new(fetch_type).post
   end
 
   def post
@@ -15,11 +16,11 @@ class AuthHostAway
       token_type = JSON.parse(response.body)['token_type']
 
       puts "Auth:#{response.status}"
-      list_res = GetHostAwayListings.run_this(token, token_type)
+      list_res = GetHostAwayListings.run_this(token, token_type) if @fetch_type == 'listings'
       puts "GetHostAwayListings: #{list_res}"
-      rese_res = GetReservation.run_this(token, token_type)
+      rese_res = GetReservation.run_this(token, token_type) if @fetch_type == 'reservations'
       puts "GetReservation:#{rese_res}"
-      clean_res = GetCleaningTasks.run_this(token, token_type)
+      clean_res = GetCleaningTasks.run_this(token, token_type) if @fetch_type == 'cleanings'
       puts "GetCleaningTasks:#{clean_res}"
     else
       @errors << response
