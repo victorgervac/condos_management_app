@@ -4,6 +4,8 @@
       .box-title.font-bold Reservations
       %div
         %button.ti-btn.ti-btn-light.text-white.py-1.px-2.rounded.bg-zinc-800{:class => "!py-1 !px-2 !text-[0.75rem]", :type => "button"} Add Reservation
+        = link_to "Refresh Reservation",reservations_url(fetch_data: "listings"),  class: " py-1 px-2 bg-zinc-500 rounded text-white"
+
     .box-body
       %ul.list-none.mb-0.personal-upcoming-events
         -@records.each do |res|

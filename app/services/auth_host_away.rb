@@ -14,7 +14,6 @@ class AuthHostAway
     if response.status.success?
       token = JSON.parse(response.body)['access_token']
       token_type = JSON.parse(response.body)['token_type']
-
       puts "Auth:#{response.status}"
       list_res = GetHostAwayListings.run_this(token, token_type) if @fetch_type[:data_type] == 'listings'
       puts "GetHostAwayListings: #{list_res}" if @fetch_type == 'listings'
