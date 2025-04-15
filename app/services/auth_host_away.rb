@@ -1,7 +1,7 @@
 class AuthHostAway
   require 'http'
   def initialize(fetch_type)
-    @fetch_type = fetch_type
+    @fetch_type = fetch_type[:data_type]
     @errors = []
   end
 
@@ -15,11 +15,11 @@ class AuthHostAway
       token = JSON.parse(response.body)['access_token']
       token_type = JSON.parse(response.body)['token_type']
       puts "Auth:#{response.status}"
-      list_res = GetHostAwayListings.run_this(token, token_type) if @fetch_type[:data_type] == 'listings'
+      list_res = GetHostAwayListings.run_this(token, token_type) if @fetch_type == 'listings'
       puts "GetHostAwayListings: #{list_res}" if @fetch_type == 'listings'
-      rese_res = GetReservation.run_this(token, token_type) if @fetch_type[:data_type] == 'listings'
+      rese_res = GetReservation.run_this(token, token_type) if @fetch_type == 'listings'
       puts "GetReservation:#{rese_res}" if @fetch_type == 'listings'
-      clean_res = GetCleaningTasks.run_this(token, token_type) if @fetch_type[:data_type] == 'cleanings'
+      clean_res = GetCleaningTasks.run_this(token, token_type) if @fetch_type == 'cleanings'
       puts "GetCleaningTasks:#{clean_res}" if @fetch_type == 'cleanings'
     else
       @errors << response

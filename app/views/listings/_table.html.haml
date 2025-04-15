@@ -16,7 +16,8 @@
                   %i{class:"fa-solid fa-hotel text-black"}
               .flex-grow.flex-col
                 %span
-                  %span.text-primary.font-semibold=(lis.name || "Guest Name")
+                  =link_to listing_path(lis.id) , class: "text-primary.font-semibold" do 
+                    =(lis.name || "listing name")
                   %div.flex.justify-between
                     %div.flex
                       %span.block{:class => " text-[0.75rem]"}Address:
