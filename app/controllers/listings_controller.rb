@@ -10,6 +10,7 @@ class ListingsController < ApplicationController
 
   def show
     @listing = Listing.find(params[:id])
+    @reservations = Reservation.where(hostaway_id: @listing.hostaway_id)
   end
 
   def edit
