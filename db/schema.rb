@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_03_25_190051) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_18_035039) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -251,6 +251,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_25_190051) do
     t.integer "insurance_policy_id"
     t.integer "cancellation_policy_id"
     t.string "host_proxy_email"
+    t.bigint "listing_id"
+    t.index ["listing_id"], name: "index_reservations_on_listing_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -282,4 +284,5 @@ ActiveRecord::Schema[7.0].define(version: 2025_03_25_190051) do
   add_foreign_key "cleaning_tasks", "listings"
   add_foreign_key "cleaning_tasks", "reservations"
   add_foreign_key "messages", "reservations"
+  add_foreign_key "reservations", "listings"
 end
