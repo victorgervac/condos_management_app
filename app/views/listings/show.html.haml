@@ -5,10 +5,10 @@
       %h3.font-semibold{:class => " text-[1.125rem]"} Timeline
     %ol.flex.items-center.whitespace-nowrap.min-w-0
       %li{:class => "text-[0.813rem] ps-[0.5rem]"}
-        %a.flex.items-center.text-primary.hover:text-primary.dark:text-primary.truncate{:href => "javascript:void(0);"}
+        %a.flex.items-center.text-primary.truncate{:href => "javascript:void(0);"}
           Pages
           %i.ti.ti-chevrons-right.flex-shrink-0.overflow-visible.rtl:rotate-180{:class => " px-[0.5rem]"}
-      %li.font-semibold.hover:text-primary{"aria-current" => "page", :class => " dark:text-white/50"} Timeline
+      %li.font-semibold.hover:text-primary{"aria-current" => "page", :class => ""} Timeline
   / Page Header Close
   / Start::row-1
   .container
@@ -18,23 +18,23 @@
       -@reservations.each do |r|
         %li
           .timeline-time.text-end
-            %span.date FRIDAY
-            %span.time.inline-block 02:31
+            %span.date= r.arrival_date
+            %span.time.inline-block
           .timeline-icon
             %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
           .timeline-body
             .flex.items-start.timeline-main-content.flex-wrap.mt-0
               .avatar.avatar-md.online.me-3.avatar-rounded.md:mt-0.mt-6
-                %img{:alt => "avatar", :src => "../assets/images/faces/4.jpg"}/
+                %i{class:"fa-solid fa-square-h"}
               .flex-grow
                 .flex.items-center
                   .sm:mt-0.mt-2
-                    %p.mb-0.font-semibold{:class => "text-[.875rem]"} Emperio
-                    %p.mb-0{:class => "text-[#8c9097] dark:text-white/50"}
+                    %p.mb-0.font-semibold{:class => "text-[.875rem]"}= r.guest_name
+                    %p.mb-0{:class => ""}
                       Project assigned by the manager all
                       %span.badge.text-primary.font-semibold.mx-1{:class => "bg-primary/10"}> files
                       and
-                      %span.badge.text-primary.font-semibold.mx-1{:class => "bg-primary/10"}> folders
+                      %span.badge.font-semibold.mx-1{:class => "bg-primary/10"}> folders
                       were included
                   .ms-auto
-                    %span.ltr:float-right.rtl:float-left.badge.timeline-badge.whitespace-nowrap{:class => "!bg-light text-[#8c9097] dark:text-white/50"} 24,Oct 2022
+                    %span.ltr:float-right.rtl:float-left.badge.timeline-badge.whitespace-nowrap{:class => "!bg-light"}= r.departure_date
