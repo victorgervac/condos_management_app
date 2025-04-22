@@ -1,20 +1,20 @@
-class AuthStack
+class StackServices
   class AuthHostAway
     require 'http'
     def initialize
       @errors = []
     end
-  
+
     def self.run
       new.post
     end
-  
+
     def post
       Rails.cache.fetch(response = HTTP.headers(api_headers).post(api_url, form: payload))
       if response.status.success?
         token = JSON.parse(response.body)['access_token']
         token_type = JSON.parse(response.body)['token_type']
-  
+
         puts "get listings: #{response.status}"
         list_res = GetHostAwayListings.run_this(token, token_type)
         puts "get Reservation: #{response.status}"
@@ -25,13 +25,13 @@ class AuthStack
         puts "why error: #{response}"
       end
     end
-  
+
     private
-  
+
     def api_url
       "#{Rails.application.credentials.base_url}/accessTokens"
     end
-  
+
     def payload
       {
         grant_type: 'client_credentials',
@@ -40,7 +40,7 @@ class AuthStack
         scope: 'general'
       }
     end
-  
+
     def api_headers
       {
         'Content-type': 'application/x-www-form-urlencoded',
@@ -48,7 +48,4 @@ class AuthStack
       }
     end
   end
-  
-
-  
 end
