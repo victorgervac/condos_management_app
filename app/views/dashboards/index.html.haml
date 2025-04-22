@@ -177,8 +177,11 @@
                     .apexcharts-yaxistooltip-text
           .flex.items-end.text-zinc-800
             %div
+            -if !@listings.present?
+              %p.mb-1 No Price 
+            - else
               %p.mb-1 USD
-              %p.mb-0.font-semibold.leading-none= "#{Listing.all.order(price: :desc).last.price} - #{ Listing.all.order(price: :desc).first.price}"
+              %p.mb-0.font-semibold.leading-none= "#{(@listings&.order(price: :desc)&.last.price || 0 )} - #{ @listings&.order(price: :desc)&.first.price || 0}"
             .ms-auto.text-end
               %p.mb-0= Listing.count
               %p.mb-0{:class => ""}
