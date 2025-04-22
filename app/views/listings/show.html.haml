@@ -2,13 +2,14 @@
   / Page Header
   .block.justify-between.page-header.md:flex
     %div
-      %h3.font-semibold{:class => " text-[1.125rem]"} Timeline
-    %ol.flex.items-center.whitespace-nowrap.min-w-0
-      %li{:class => "text-[0.813rem] ps-[0.5rem]"}
+      %h3.font-semibold{:class => " text-[1.125rem]"}= @listing.name
+      %h3.font-semibold{:class => " text-[1.125rem]"}= @listing.address
+    %ol.whitespace-nowrap.min-w-0.flex.justify-between
+      %li{:class => "text-[0.813rem] ps-[0.5rem] "}
         %a.flex.items-center.text-primary.truncate{:href => "javascript:void(0);"}
-          Pages
-          %i.ti.ti-chevrons-right.flex-shrink-0.overflow-visible.rtl:rotate-180{:class => " px-[0.5rem]"}
-      %li.font-semibold.hover:text-primary{"aria-current" => "page", :class => ""} Timeline
+          Listings
+          %i{class:"fa-solid fa-chevron-right"}
+      %li.font-semibold.hover:text-primary{"aria-current" => "page", :class => ""} Reservetions
   / Page Header Close
   / Start::row-1
   .container
@@ -17,9 +18,7 @@
         No Upcoming Reservations
       -@reservations.each do |r|
         %li
-          .timeline-time.text-end
-            %span.date= r.arrival_date
-            %span.time.inline-block
+
           .timeline-icon
             %a{"aria-label" => "anchor", :href => "javascript:void(0);"}
           .timeline-body
@@ -30,11 +29,13 @@
                 .flex.items-center
                   .sm:mt-0.mt-2
                     %p.mb-0.font-semibold{:class => "text-[.875rem]"}= r.guest_name
-                    %p.mb-0{:class => ""}
-                      Project assigned by the manager all
-                      %span.badge.text-primary.font-semibold.mx-1{:class => "bg-primary/10"}> files
-                      and
-                      %span.badge.font-semibold.mx-1{:class => "bg-primary/10"}> folders
-                      were included
-                  .ms-auto
-                    %span.ltr:float-right.rtl:float-left.badge.timeline-badge.whitespace-nowrap{:class => "!bg-light"}= r.departure_date
+                    %p.mb-0{:class => ""} 
+                      %span.badge.text-primary.font-semibold.mx-1{:class => "bg-primary/10"}
+                      %span.badge.font-semibold.mx-1{:class => "bg-primary/10"}
+                  .flex.flex-cols
+                    .ms-auto
+                      %span.ltr:float-right.rtl:float-left.badge.timeline-badge.whitespace-nowrap{:class => "!bg-light"} Departure Date:
+                      %span.ltr:float-right.rtl:float-left.badge.timeline-badge.whitespace-nowrap{:class => "!bg-light"}= r.departure_date
+                    .timeline-time
+                      %span.time.inline-block Arrival Date
+                      %span.date= r.arrival_date
