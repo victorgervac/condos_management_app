@@ -1,53 +1,51 @@
-%div.px-5.bg-white
-  .xl:col-span-6.col-span-12.bg-white.text-zinc-800
-    = form_with model: @user, url: user_path, class: "p-4" do |form|
-      .box.text-zinc-800.bg-white.text-zinc-800
-        .box-header.justify-between
-          .box-title Form grid
-          .prism-toggle
-            %button.ti-btn.ti-btn-primary{:class => "!py-1 !px-2 !font-medium", :type => "button"}
-              Show Code
-              %i.ri-code-line.ms-2.inline-block.align-middle
-        .box-body
-          .grid.grid-cols-12.sm:gap-x-6.sm:gap-y-4
-            .md:col-span-6.col-span-12.mb-4
-              %label.form-label First Name
-              = form.text_field :first_name , class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
-            .md:col-span-6.col-span-12.mb-4
-              %label.form-label Last Name
-              = form.text_field :last_name , class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
-            .md:col-span-6.col-span-12.mb-4.sm:mb-0
-              %label.form-label Address
-              .grid.grid-cols-12.sm:gap-x-4
-                .xl:col-span-12.col-span-12.mb-4
-                  %input.form-control{"aria-label" => "Street", :placeholder => "Street", :type => "text"}/
-                .xl:col-span-12.col-span-12.mb-4
-                  %input.form-control{"aria-label" => "Landmark", :placeholder => "Landmark", :type => "text"}/
-                .xxl:col-span-6.xl:col-span-12.col-span-12.mb-4
-                  %input.form-control{"aria-label" => "City", :placeholder => "City", :type => "text"}/
-                .xxl:col-span-6.xl:col-span-12.col-span-12.mb-4
-                  %select#inputState1.form-select{:class => "!py-[0.59rem]"}
-                    %option{:selected => "selected"} State
-                    %option ...
-                .xxl:col-span-6.xl:col-span-12.col-span-12.xxl:mb-0.mb-4
-                  %input.form-control{"aria-label" => "Postal/Zip code", :placeholder => "Postal/Zip code", :type => "text"}/
-                .xxl:col-span-6.xl:col-span-12.col-span-12
-                  %select#inputCountry.form-select{:class => "!py-[0.59rem]"}
-                    %option{:selected => "selected"} Country
-                    %option ...
+%div.px-5.bg-zinc-900.min-h-screen.text-white
+  .xl:col-span-6.col-span-12.bg-zinc-800.shadow-xl.rounded-2xl.p-6
+    = form_with model: @user, url: user_path, class: "space-y-6" do |form|
+      .flex.justify-between.items-center.mb-6
+        %h2.text-2xl.font-semibold.text-white 
+          %i.ri-code-line.ml-2
+
+      .grid.grid-cols-12.gap-6
+        .md:col-span-6.col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium First Name
+          = form.text_field :first_name, class: "form-control w-full rounded-lg border border-zinc-700 bg-zinc-700 text-white placeholder:text-zinc-400 focus:ring-2 focus:ring-indigo-500"
+
+        .md:col-span-6.col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium Last Name
+          = form.text_field :last_name, class: "form-control w-full rounded-lg border border-zinc-700 bg-zinc-700 text-white placeholder:text-zinc-400 focus:ring-2 focus:ring-indigo-500"
+
+        .md:col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium Address
+          .grid.grid-cols-12.gap-4
+            .col-span-12
+              %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "Street", :type => "text"}/
+            .col-span-12
+              %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "Landmark", :type => "text"}/
             .md:col-span-6.col-span-12
-              .grid.grid-cols-12
-                .xl:col-span-12.col-span-12.mb-4
-                  %label.form-label Email
-                  = form.text_field :email , placeholder: "email",class: "form-control text-zinc-800 border border-2 boder-zinc-900 rounded-full"
-                .xl:col-span-12.col-span-12
-            .md:col-span-6.col-span-12.mb-4.sm:mb-0
-              %label.form-label Contact Number
-              %input.form-control{"aria-label" => "Phone number", :placeholder => "Phone number", :type => "number"}/
-            .md:col-span-6.col-span-12.mb-4.sm:mb-0
-              %label.form-label Alternative Contact
-              %input.form-control{"aria-label" => "Phone number", :placeholder => "Phone number", :type => "number"}/
-            .md:col-span-12.col-span-12.mb-4.sm:mb-0
-              .form-check.mb-4
-                %input#gridCheck.form-check-input{:type => "checkbox"}/
-            =form.button "Submit" , class: "rounded-lg px-2 py-3 bg-zinc-800 hover:bg-zinc-800/20 text-white"
+              %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "City", :type => "text"}/
+            .md:col-span-6.col-span-12
+              %select.form-select.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white
+                %option{:selected => "selected"} State
+                %option ...
+            .md:col-span-6.col-span-12
+              %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "Postal/Zip code", :type => "text"}/
+            .md:col-span-6.col-span-12
+              %select.form-select.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white
+                %option{:selected => "selected"} Country
+                %option ...
+
+        .md:col-span-6.col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium Email
+          = form.text_field :email, placeholder: "email", class: "form-control w-full rounded-lg border border-zinc-700 bg-zinc-700 text-white placeholder:text-zinc-400 focus:ring-2 focus:ring-indigo-500"
+
+        .md:col-span-6.col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium Contact Number
+          %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "Phone number", :type => "number"}/
+
+        .md:col-span-6.col-span-12
+          %label.form-label.block.mb-2.text-sm.font-medium Alternative Contact
+          %input.form-control.w-full.rounded-lg.border.border-zinc-700.bg-zinc-700.text-white.placeholder:text-zinc-400{:placeholder => "Phone number", :type => "number"}/
+
+
+        .md:col-span-12.col-span-12
+          = form.button "Submit", class: "mt-4 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-md transition-all duration-200"
