@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_04_22_145054) do
+ActiveRecord::Schema[7.0].define(version: 2025_04_24_035448) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -143,6 +143,8 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_22_145054) do
     t.string "vrbo_listing_url"
     t.string "google_vr_listing_url"
     t.string "slug"
+    t.bigint "owner_id"
+    t.index ["owner_id"], name: "index_listings_on_owner_id"
     t.index ["slug"], name: "index_listings_on_slug", unique: true
   end
 
@@ -296,6 +298,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_22_145054) do
 
   add_foreign_key "cleaning_tasks", "listings"
   add_foreign_key "cleaning_tasks", "reservations"
+  add_foreign_key "listings", "users", column: "owner_id"
   add_foreign_key "messages", "reservations"
   add_foreign_key "reservations", "listings"
 end
