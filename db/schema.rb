@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2025_04_24_035448) do
+ActiveRecord::Schema[7.0].define(version: 2025_05_31_182758) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,6 +32,15 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_24_035448) do
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
   end
 
+  create_table "charges", force: :cascade do |t|
+    t.bigint "expense_id", null: false
+    t.string "description"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["expense_id"], name: "index_charges_on_expense_id"
+  end
+
   create_table "cleaning_tasks", force: :cascade do |t|
     t.datetime "cleaning_date"
     t.bigint "reservation_id", null: false
@@ -43,6 +52,19 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_24_035448) do
     t.integer "hostaway_id"
     t.index ["listing_id"], name: "index_cleaning_tasks_on_listing_id"
     t.index ["reservation_id"], name: "index_cleaning_tasks_on_reservation_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.string "receipt"
+    t.decimal "total"
+    t.date "purchase_on"
+    t.string "payment_type"
+    t.string "purchase_place"
+    t.boolean "paid"
+    t.string "category"
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -296,6 +318,7 @@ ActiveRecord::Schema[7.0].define(version: 2025_04_24_035448) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "charges", "expenses"
   add_foreign_key "cleaning_tasks", "listings"
   add_foreign_key "cleaning_tasks", "reservations"
   add_foreign_key "listings", "users", column: "owner_id"

@@ -9,7 +9,6 @@ class CreateExpenses < ActiveRecord::Migration[7.0]
       t.boolean :paid
       t.string :category
       t.text :notes
-      t.references :property, null: false, foreign_key: true
 
       t.timestamps
     end
