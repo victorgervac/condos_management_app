@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  receipt: MyString
+  total: 9.99
+  purchase_on: 2025-05-31
+  payment_type: MyString
+  purchase_place: MyString
+  paid: false
+  category: MyString
+  notes: MyText
+  property: one
+
+two:
+  receipt: MyString
+  total: 9.99
+  purchase_on: 2025-05-31
+  payment_type: MyString
+  purchase_place: MyString
+  paid: false
+  category: MyString
+  notes: MyText
+  property: two
