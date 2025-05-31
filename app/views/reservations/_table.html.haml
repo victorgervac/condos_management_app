@@ -21,7 +21,7 @@
                     %span Total
                     %span= res.total_price
                 %div.flex
-                  %span=Listing.where(hostaway_id: res.hostaway_reservation_id).first&.name
+                  %span= Listing.where(hostaway_id: res.hostaway_reservation_id).first&.name
                   %span.block Arrival Date:
                   %span.badge.text-primary.whitespace-nowrap{:class => "bg-primary/10"}=res.arrival_date
                   %span.block Departure Date:
